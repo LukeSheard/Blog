@@ -1,0 +1,71 @@
+{% include header.html %}
+
+	<div class="title">
+		<h1>{{ page.title }}</h1>
+		<h5 class="info">
+			<small>
+				<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 
+				{{ page.date | date: "%B %-d, %Y"}}
+				{% if page.location != nil %}
+					&nbsp; &nbsp; &nbsp;
+					<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
+					{{ page.location }}
+				{% endif %}
+			</small>
+		</h5>
+	</div>
+</div>
+</header>
+
+<div class="container">		
+	<div class="row">
+	 	<div class="col-xs-12 cod-sm-12 col-md-9" style="border-right-width: 2px; border-right-color: #ddd; border-right-style: solid;">
+			<div class="gallery">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						{% for imageNumber in (1..{{page.galleryIcons}}) %}
+							<li data-target="#myCarousel" data-slide-to="{{imageNumber}}"></li>
+						{% endfor %}
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<img src="{{site.url}}/images/{{page.title}}/Gallery1.jpg" alt="New York">
+						</div>
+						{% for image in (2..{{page.gallery}}) %}
+						<div class="item">
+							<img src="{{site.url}}/images/{{page.title}}/Gallery{{ image }}.jpg" alt="New York">
+						</div>
+						{% endfor %}
+					</div>
+
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+
+			<div id="content">
+
+				{{ content }}
+
+			</div>
+
+		</div>
+
+		<div class="hidden-sm col-xs-12 col-md-3">
+		  	{% include sidebar.html %}
+		</div>
+	</div>
+</div>
+
+{% include footer.html %}

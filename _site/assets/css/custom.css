@@ -1,0 +1,86 @@
+header{
+	background-color: #000000;
+	opacity: 0.7;
+	background-repeat: no-repeat;
+
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	box-shadow: inset 0 0 0 1000px rgba(0,0,0,.35);
+
+	background-position: 50% 50%;
+	overflow: hidden;
+	height: 100vh;
+	padding-bottom: 25px;
+	margin-bottom: 50px;
+	width: 100%;
+}	
+
+@media screen and (min-width: 768px){
+	header{
+		height: 50vh;
+		min-height: 350px;
+	}
+}
+
+.body{
+	margin: 0;
+}
+
+.title{
+	vertical-align: middle;
+	display: block;
+	margin-top: 10vh;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 774px){
+	.title{
+		margin-top: 25vh;
+	}
+}
+
+.title h1{
+	font-size: 7em;
+	color: #fff;
+}
+
+@media screen and (max-width: 960px;)
+
+.title .info{
+	color: #fff;
+}
+
+.title small{
+	color: #fff;
+}
+
+.gallery{
+	margin: 0;
+	padding: 0;
+	padding-bottom: 10px;
+}
+
+#content > img {
+	width: 47.5%;
+	float: left;
+	margin-right:15px;
+	margin-bottom:10px;
+}
+
+hr {
+  background: #ddd; 
+  clear: both; 
+  float: none; 
+  width: 100%; 
+  height: 1px;
+  margin: 0 0 1.4em;
+  border: none; 
+}

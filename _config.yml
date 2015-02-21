@@ -1,0 +1,11 @@
+name: "Luke Sheard"
+description: ""
+
+url: "http://lukesheard.github.io/"
+
+paginate: 10
+paginate_path: "blog/page:num/"
+
+markdown: rdiscount
+permalink: /blog/:year/:title
+highlighter: pygments
