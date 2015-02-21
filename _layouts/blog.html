@@ -1,0 +1,26 @@
+{% include header.html %}
+
+{% include navbar-blog.html %}
+
+	<div class="title">
+		<h1>{{page.title}}</h1>
+	</div>
+</header>
+
+<div class="container">
+	<div class="row">
+	 	<div class="col-xs-12 cod-sm-12 col-md-8">
+			
+
+{{ content }}
+
+</div>
+
+
+	  <div class="hidden-sm col-xs-12 col-md-4">
+	  	This is going to be the sidebar.
+	  </div>
+	</div>
+</div>
+
+{% include footer.html %}
