@@ -108,24 +108,22 @@ hr {
 }
 
 .image{
-	width: 35%;
-	float:left;
-	clear:none;
+	width: 100%;
 }
 
 .image > img{
 	width: 100%;
 }
 
-.post-details{
-	margin-left: 37.5%;
-}
-
-.post-description{
-	
-}
-
-.clear{
-	clear:both;
+.blog-loop > li {
 	margin-bottom: 15px;
+	border-bottom: 2px solid #cccccc;
+}
+
+.blog-loop > li:last-child{
+	border: 0;
+}
+
+.post > .row{
+	padding-bottom: 10px
 }
