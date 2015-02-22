@@ -21,7 +21,13 @@
 
   	<style type="text/css">
 	  	header{
-			background-image: url("{{site.title}}/images/headers/{{page.title}}.jpg");
+	  		{% if {{page.layout == "post"%}
+			background-image: url("{{site.title}}/images/headers/posts/{{page.title}}.jpg");
+			{% elsif {{page.layout == "gallery"%}
+			background-image: url("{{site.title}}/images/headers/posts/{{page.title}}.jpg");
+			{% else  %}
+			background-image: url("{{site.title}}/images/headers/pages/{{page.title}}.jpg");
+			{% endif %}
 	  	}
   	</style>
 </head>
