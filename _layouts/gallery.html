@@ -25,7 +25,7 @@
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
 						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						{% for imageNumber in (1..({{page.gallery}} - 1)) %}
+						{% for imageNumber in (1..({{page.gallery}})) %}
 							<li data-target="#myCarousel" data-slide-to="{{imageNumber}}"></li>
 						{% endfor %}
 					</ol>
