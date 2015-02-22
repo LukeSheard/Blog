@@ -54,14 +54,14 @@
 				<!-- NavBar Links -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				  	<ul class="nav navbar-nav navbar-right">
-						{% if {{page.menu}} == "blog" %}
+						{% if {{page.layout}} == "blog" %}
 							{% include navbar-blog.html %}
 						{% elsif {{page.layout}} == "post" %}
 							{% include navbar-blog.html %}
 						{% elsif {{page.layout}} == "gallery" %}
 							{% include navbar-blog.html %}
 
-						{% elsif {{page.menu}} == "about" %}
+						{% elsif {{page.title}} == "About" %}
 							{% include navbar-about.html %}
 
 						{% else %}

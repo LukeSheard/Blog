@@ -3,8 +3,7 @@ description: ""
 
 url: "http://lukesheard.github.io/"
 
-paginate: 10
-paginate_path: "blog/page:num/"
+paginate: 8
 
 markdown: rdiscount
 permalink: /blog/:year/:title

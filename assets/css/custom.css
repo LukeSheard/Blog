@@ -3,10 +3,7 @@
 }
 
 header{
-	background-color: #000000;
-	opacity: 0.7;
 	background-repeat: no-repeat;
-
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -46,6 +43,32 @@ footer a:hover, a:focus{
   text-decoration: underline;
 }
 
+.social{
+	display: inline;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+.social > ul{
+	padding-left: 5px;
+	display: inline;
+}
+
+.social > li{
+	font-size: 1.15em;
+	padding-right: 5px;
+	display: inline;
+}
+.social > li:last-child{
+	padding: 0;
+}
+
+.social > li > a{
+	text-decoration: none;
+}
+
 .title{
 	vertical-align: middle;
 	display: block;
@@ -83,7 +106,7 @@ footer a:hover, a:focus{
 }
 
 #content > img {
-	width: 48%;
+	max-height: 450px;
 	float: left;
 	margin-right:1%;
 	margin-bottom:15px;
@@ -99,57 +122,52 @@ hr {
   border: none; 
 }
 
-.post{
-	width:100%;
-	border-bottom: 10px;
-	margin-bottom: 10px;
-	display: block;
-	clear: both;
-}
-
-.image{
-	width: 100%;
-}
-
-.image > img{
-	width: 100%;
-}
-
-.blog-loop > li {
-	margin-bottom: 15px;
-	border-bottom: 2px solid #cccccc;
-}
-
-.blog-loop > li:last-child{
-	border: 0;
-}
-
-.post > .row{
-	padding-bottom: 10px
-}
-
-.social{
-	display: inline;
+.blog-loop{
 	margin: 0;
-	padding: 0;
-	list-style-type: none;
+}
+
+.post{
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: 50% 50%;
+	box-shadow: inset 0 0 0 1000px rgba(255,255, 255, .45);
+}
+
+@media (max-width: 768px) { 
+	.post{
+		min-height: 50vw;
+	}
+}
+@media (min-width: 768px) and (max-width: 1200px) { 
+	.post{
+		min-height: 33.33vw;
+	}
+}
+@media (min-width: 1200px) { 
+	.post{
+		min-height: 22.22vw;
+	}
+}
+
+.post-title{
+	font-weight: 700;
 	text-align: center;
+  	width: 80%;
+  	transform: translate(-50%, -50%);
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	padding: 20px;
+  	resize: both;
+  	overflow: auto;
 }
 
-.social > ul{
-	padding-left: 5px;
-	display: inline;
-}
-
-.social > li{
-	font-size: 1.15em;
-	padding-right: 5px;
-	display: inline;
-}
-.social > li:last-child{
-	padding: 0;
-}
-
-.social > li > a{
-	text-decoration: none;
+.sidebar{
+	border-left-width: 2px;
+	border-left-color: #ddd;
+	border-left-style: solid;
 }
