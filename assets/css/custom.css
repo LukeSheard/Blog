@@ -18,9 +18,10 @@ header{
 	background-position: 50% 50%;
 	overflow: hidden;
 	height: 100vh;
+	width: 100%;
+
 	padding-bottom: 25px;
 	margin-bottom: 50px;
-	width: 100%;
 }	
 
 @media screen and (min-width: 768px){
@@ -39,7 +40,7 @@ footer{
 	min-height: 65px;
 	padding-top: 20px;
 	padding-bottom: 15px;
-	margin-top: 50px;
+	margin-top: 25px;
 }	
 footer a:hover, a:focus{
   color: #ffffff;
@@ -110,10 +111,10 @@ footer a:hover, a:focus{
 
 #content > img {
 	max-height: 450px;
-	max-width: 40%;
-	float: left;
+	max-width: 350px;
 	margin-right:1%;
-	margin-bottom:15px;
+	margin-left:1%;
+	margin-bottom:5px;
 }
 
 .cover > img{
@@ -139,6 +140,7 @@ hr {
 }
 
 .post{
+	cursor:pointer;
 	font-weight: 300;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -154,14 +156,19 @@ hr {
 		min-height: 50vw;
 	}
 }
-@media (min-width: 768px) and (max-width: 1200px) { 
+@media (min-width: 768px) and (max-width: 992px) { 
 	.post{
 		min-height: 33.33vw;
 	}
 }
-@media (min-width: 1200px) { 
+@media (min-width: 992px) and (max-width: 1200px) { 
 	.post{
 		min-height: 22.22vw;
+	}
+}
+@media (min-width: 1200px) { 
+	.post{
+		min-height: 16.66vw;
 	}
 }
 
@@ -178,14 +185,13 @@ hr {
   	top: 45%;
   	left: 50%;
   	resize: both;
-  	overflow: auto;
 }
 
 .post:hover .post-title{
 	visibility: visible;
 }
 
-.post-title > a{
+.post-title > h3 > a{
 	font-weight: 300;
 	text-decoration: none;
 }

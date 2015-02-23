@@ -25,11 +25,11 @@
   	<style type="text/css">
 	  	header{
 	  		{% if {{page.layout == "post"%}
-			background-image: url("{{site.title}}/images/headers/posts/{{page.title}}.jpg");
+			background-image: url("/images/headers/posts/{{page.title}}.jpg");
 			{% elsif {{page.layout == "gallery"%}
-			background-image: url("{{site.title}}/images/headers/posts/{{page.title}}.jpg");
+			background-image: url("/images/headers/posts/{{page.title}}.jpg");
 			{% else  %}
-			background-image: url("{{site.title}}/images/headers/pages/{{page.title}}.jpg");
+			background-image: url("/images/headers/pages/{{page.title}}.jpg");
 			{% endif %}
 	  	}
   	</style>
