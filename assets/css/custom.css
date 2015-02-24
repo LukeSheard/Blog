@@ -177,14 +177,11 @@ hr {
 }
 
 .post-title{
+	height: 66%;
 	visibility: hidden;
 	text-align: center;
+	margin: auto;
   	width: 80%;
-  	transform: translate(-50%, -50%);
-  	position: absolute;
-  	top: 45%;
-  	left: 50%;
-  	resize: both;
 }
 
 .post:hover .post-title{
@@ -200,4 +197,10 @@ hr {
 	border-left-width: 2px;
 	border-left-color: #ddd;
 	border-left-style: solid;
+}
+.center{
+	width: 50%;
+	margin-left: 25%;
+	margin-left: 25%;
+	text-align: center;
 }
