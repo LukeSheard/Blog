@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ site.description }}">
 
+	
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	
 	<!-- Bootstrap -->
-	<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link href="/assets/css/bootstrap.css" rel="stylesheet">
 	<link href="/assets/css/custom.css" rel="stylesheet">
 
@@ -19,16 +22,51 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   	<![endif]-->
 
-  	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  	<!-- Include all compiled plugins (below), or include individual files as needed -->
-  	<script src="/assets/js/bootstrap.min.js"></script>
   	<style type="text/css">
-  	header{
-		background-image: url("/images/headers/{{page.title}}.jpg");
-  	}
+	  	header{
+	  		{% if {{page.layout == "post"%}
+			background-image: url("/images/headers/posts/{{page.title}}.jpg");
+			{% elsif {{page.layout == "gallery"%}
+			background-image: url("/images/headers/posts/{{page.title}}.jpg");
+			{% else  %}
+			background-image: url("/images/headers/pages/{{page.title}}.jpg");
+			{% endif %}
+	  	}
   	</style>
 </head>
 <body>
 	<header>
-	
+		<nav class="navbar">
+		  	<div class="container-fluid">
+			    <!-- Homepage link and NavBar collapse for small display -->
+			    <div class="navbar-header">
+			    	<a class="navbar-brand" href="/">Luke Sheard</a>
+
+			      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+			      	</button>			      
+			    </div>
+
+				<!-- NavBar Links -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				  	<ul class="nav navbar-nav navbar-right">
+						{% if {{page.layout}} == "blog" %}
+							{% include navbar-blog.html %}
+						{% elsif {{page.layout}} == "post" %}
+							{% include navbar-blog.html %}
+						{% elsif {{page.layout}} == "gallery" %}
+							{% include navbar-blog.html %}
+
+						{% elsif {{page.title}} == "About" %}
+							{% include navbar-about.html %}
+
+						{% else %}
+							{% include navbar-home.html %}
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</nav>

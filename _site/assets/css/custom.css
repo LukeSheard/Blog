@@ -1,39 +1,92 @@
+.body{
+	margin: 0;
+}
+
 header{
 	background-color: #000000;
 	opacity: 0.7;
-	background-repeat: no-repeat;
 
+	background-repeat: no-repeat;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 
+	box-shadow: inset 0 0 0 1000px rgba(0,0,0,.45);
+
 	background-position: 50% 50%;
 	overflow: hidden;
-	height: 350px;
-	padding-bottom: 25px;
-	margin-bottom: 25px;
+	height: 100vh;
 	width: 100%;
+
+	padding-bottom: 25px;
+	margin-bottom: 50px;
 }	
 
 @media screen and (min-width: 768px){
 	header{
-		height: 450px;
+		height: 50vh;
+		min-height: 350px;
 	}
 }
 
-.body{
+footer{
+	background-color: #3f3f3f;
+	color: #fff;
+	width: 100%;
+	bottom:0;
+	position: relative;
+	min-height: 65px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}	
+footer a:hover, a:focus{
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.social{
+	display: inline;
 	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+.social > ul{
+	padding-left: 5px;
+	display: inline;
+}
+
+.social > li{
+	font-size: 1.15em;
+	padding-right: 5px;
+	display: inline;
+}
+.social > li:last-child{
+	padding: 0;
+}
+
+.social > li > a{
+	text-decoration: none;
 }
 
 .title{
-	position: relative;
-  	top: 35%;
-    -webkit-transform: translateY(-35%);
-    -ms-transform: translateY(-35%);
-    transform: translateY(-35%);
-    text-align: center;
+	vertical-align: middle;
+	display: block;
+	margin-top: 10vh;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 774px){
+	.title{
+		margin-top: 25vh;
+	}
 }
 
 .title h1{
@@ -41,14 +94,12 @@ header{
 	color: #fff;
 }
 
-.post-title{
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 50px;
+.title .info{
+	color: #fff;
 }
 
-.post-title .info{
-	color: ;
+.title small{
+	color: #fff;
 }
 
 .gallery{
@@ -57,8 +108,106 @@ header{
 	padding-bottom: 10px;
 }
 
+#content{
+	margin-bottom: 25px;
+}
+
 #content > img {
-	width: 45%;
-	float: left;
-	padding:5px;
+	max-height: 450px;
+	max-width: 350px;
+	margin-right:1%;
+	margin-left:1%;
+	margin-bottom:5px;
+}
+
+.cover > img{
+	max-height: 100%;
+	max-width: 100%;
+	width: 100%;
+	padding-bottom: 10px;
+}
+
+hr {
+  background: #ddd; 
+  clear: both; 
+  float: none; 
+  width: 100%; 
+  height: 1px;
+  margin: 0 0 1.4em;
+  border: none; 
+}
+
+.blog-loop{
+	margin: 0;
+	padding: 0;
+}
+
+.post{
+	cursor:pointer;
+	font-weight: 300;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+@media (max-width: 768px) { 
+	.post{
+		min-height: 50vw;
+	}
+}
+@media (min-width: 768px) and (max-width: 992px) { 
+	.post{
+		min-height: 33.33vw;
+	}
+}
+@media (min-width: 992px) and (max-width: 1200px) { 
+	.post{
+		min-height: 22.22vw;
+	}
+}
+@media (min-width: 1200px) { 
+	.post{
+		min-height: 16.66vw;
+	}
+}
+
+.post:hover{
+	box-shadow: inset 0 0 0 1000px rgba(255,255, 255, .45);
+}
+
+.post-title{
+	height: 66%;
+	visibility: hidden;
+	text-align: center;
+	margin: auto;
+  	width: 80%;
+}
+
+.post:hover .post-title{
+	visibility: visible;
+}
+
+.post-title > h3 > a{
+	font-weight: 300;
+	text-decoration: none;
+}
+
+.sidebar{
+	border-left-width: 2px;
+	border-left-color: #ddd;
+	border-left-style: solid;
+}
+.copy-center{
+	margin-left: auto;
+	margin-left: auto;
+}
+
+@media (max-width: 992px){
+	.copy-center{
+		text-align: center;
+	}
 }

@@ -1,31 +1,32 @@
 {% include header.html %}
 
-{% include navbar-blog.html %}
-
-</header>
-
-<div class="container">
-	<div class="post-title">
-		<h2>{{ page.title }}</h2>
+	<div class="title">
+		<h1>{{ page.title }}</h1>
 		<h5 class="info">
 			<small>
 				<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 
 				{{ page.date | date: "%B %-d, %Y"}}
-				&nbsp; 
-				<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
-				{{ page.location }}
+				{% if page.location != nil %}
+					&nbsp; &nbsp; &nbsp;
+					<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
+					{{ page.location }}
+				{% endif %}
 			</small>
 		</h5>
 	</div>
-			
+</div>
+</header>
+
+{% if {{page.categories}} == nil %}	
+<div class="container">		
 	<div class="row">
-	 	<div class="col-xs-12 cod-sm-12 col-md-8">
+	 	<div class="col-xs-12 cod-sm-12 col-md-9">
 			<div class="gallery">
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
 						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						{% for imageNumber in (1..{{page.galleryIcons}}) %}
+						{% for imageNumber in (1..({{page.gallery}})) %}
 							<li data-target="#myCarousel" data-slide-to="{{imageNumber}}"></li>
 						{% endfor %}
 					</ol>
@@ -33,11 +34,11 @@
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner" role="listbox">
 						<div class="item active">
-							<img src="{{site.url}}/images/{{page.title}}/Gallery1.jpg" alt="New York">
+							<img src="/images/{{page.title}}/Gallery0.jpg">
 						</div>
-						{% for image in (2..{{page.gallery}}) %}
+						{% for image in (1..{{page.gallery}}) %}
 						<div class="item">
-							<img src="{{site.url}}/images/{{page.title}}/Gallery{{ image }}.jpg" alt="New York">
+							<img src="/images/{{page.title}}/Gallery{{ image }}.jpg">
 						</div>
 						{% endfor %}
 					</div>
@@ -62,11 +63,53 @@
 
 		</div>
 
-
-		<div class="hidden-sm col-xs-12 col-md-4">
-		  	This is going to be the sidebar.
+		<div class="hidden-xs hidden-sm col-md-3 sidebar">
+		  	{% include sidebar.html %}
 		</div>
 	</div>
 </div>
+{% else %}
+<div class="container">
+	<div class="gallery">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				{% for imageNumber in (1..({{page.gallery}})) %}
+					<li data-target="#myCarousel" data-slide-to="{{imageNumber}}"></li>
+				{% endfor %}
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="/images/{{page.title}}/Gallery0.jpg" alt="New York">
+				</div>
+				{% for image in (1..{{page.gallery}}) %}
+				<div class="item">
+					<img src="/images/{{page.title}}/Gallery{{ image }}.jpg" alt="New York">
+				</div>
+				{% endfor %}
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+
+	<div id="content">
+
+		{{ content }}
+
+	</div>
+</div>
+{% endif %}
 
 {% include footer.html %}

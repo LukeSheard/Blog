@@ -1,36 +1,47 @@
 {% include header.html %}
 
-{% include navbar-blog.html %}
-
-</header>
-
-<div class="container">
-	<div class="post-title">
-		<h2>{{ page.title }}</h2>
+	<div class="title">
+		<h1>{{ page.title }}</h1>
 		<h5 class="info">
 			<small>
 				<span class="glyphicon glyphicon-time" aria-hidden="true"></span> 
 				{{ page.date | date: "%B %-d, %Y"}}
-				&nbsp; 
-				<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
-				{{ page.location }}
+				{% if page.location != nil %}
+					&nbsp; &nbsp; &nbsp;
+					<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 
+					{{ page.location }}
+				{% endif %}
 			</small>
 		</h5>
 	</div>
-			
-	<div class="row">
-	 	<div class="col-xs-12 cod-sm-12 col-md-8">
-			
-
-{{ content }}
 
 </div>
+</header>
 
+{% if {{page.categories}} == nil %}	
+<div class="container">	
+	<div class="row">
+	 	<div class="col-xs-12 cod-sm-12 col-md-9">
+			<div id="content" role="main">
+				{{ content }}
+			</div>
+		</div>
 
-	  <div class="hidden-sm col-xs-12 col-md-4">
-	  	This is going to be the sidebar.
-	  </div>
+		
+	  	<div class="hidden-xs hidden-sm col-md-3 sidebar">
+	  		{% include sidebar.html %}
+	  	</div>
 	</div>
 </div>
+{% else %}
+
+<div class="container-post">
+	<div id="content">
+		{{ content }}
+	</div>
+</div>
+
+{% endif%}
+
 
 {% include footer.html %}
