@@ -36,9 +36,8 @@ footer{
 	background-color: #3f3f3f;
 	color: #fff;
 	width: 100%;
-	bottom:0;
-	position: relative;
-	min-height: 65px;
+	bottom: 0;
+	height: 65px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }	
@@ -111,7 +110,6 @@ footer a:hover, a:focus{
 
 #content{
 	margin-bottom: 25px;
-	min-height: 35vh;
 }
 
 #content > img {
