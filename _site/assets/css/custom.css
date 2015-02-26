@@ -13,7 +13,8 @@ header{
 	-o-background-size: cover;
 	background-size: cover;
 
-	box-shadow: inset 0 0 0 1000px rgba(0,0,0,.45);
+	
+	box-shadow: inset 0 0 0 1000px rgba(0,0,0,.55);
 
 	background-position: 50% 50%;
 	overflow: hidden;
@@ -22,7 +23,7 @@ header{
 
 	padding-bottom: 25px;
 	margin-bottom: 50px;
-}	
+}
 
 @media screen and (min-width: 768px){
 	header{
@@ -90,7 +91,7 @@ footer a:hover, a:focus{
 }
 
 .title h1{
-	font-size: 5em;
+	font-size: 7em;
 	color: #fff;
 }
 
@@ -110,6 +111,7 @@ footer a:hover, a:focus{
 
 #content{
 	margin-bottom: 25px;
+	min-height: 35vh;
 }
 
 #content > img {
@@ -143,8 +145,11 @@ hr {
 }
 
 .post{
+	display: table;
+	position: relative;
 	cursor:pointer;
 	font-weight: 300;
+
 	background-repeat: no-repeat;
 	background-size: cover;
 	-webkit-background-size: cover;
@@ -176,15 +181,17 @@ hr {
 }
 
 .post:hover{
-	box-shadow: inset 0 0 0 1000px rgba(255,255, 255, .45);
+	box-shadow: inset 0 0 0 1000px rgba(255,255, 255, .75);
 }
 
 .post-title{
-	height: 66%;
+	*position: absolute;
+	top: 50%;
+	display: table-cell;
 	visibility: hidden;
+	vertical-align: middle;
 	text-align: center;
-	margin: auto;
-  	width: 80%;
+  	width: 100%;
 }
 
 .post:hover .post-title{
@@ -210,4 +217,24 @@ hr {
 	.copy-center{
 		text-align: center;
 	}
+}
+
+.heading{
+	border-bottom: 2px solid #0000ff;
+	margin-bottom: 5px;
+}
+
+.place{
+    margin: 0;
+    padding: 0;
+    display: inline;
+    bottom: 0;
+}
+
+.date{
+    margin: 0;
+    padding: 0;
+    display: inline;
+    float: right;
+    bottom: 0;
 }

@@ -3862,12 +3862,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav > li > a {
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   display: block;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
+  border-color: #fff;
+  border-bottom: 3px solid #0000ff;
   text-decoration: none;
 }
 .nav > li.disabled > a {
@@ -3882,7 +3884,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  border-color: #337ab7;
+  border-color: #fff;
   border-bottom: 3px solid #0000ff;
 }
 .nav .nav-divider {
@@ -4411,7 +4413,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar .navbar-collapse,
 .navbar .navbar-form {
 }
-.navbar .navbar-nav > .open > a,
+.navbar .navbar-nav > .open > a{
+  color: #fff;
+}
 .navbar .navbar-nav > .open > a:hover,
 .navbar .navbar-nav > .open > a:focus {
   color: #0000ff;
@@ -5200,7 +5204,6 @@ a.list-group-item-danger.active:focus {
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
   color: inherit;
 }
 .panel-title > a,

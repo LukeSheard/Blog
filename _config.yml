@@ -3,6 +3,10 @@ description: ""
 
 url: "http://lukesheard.github.io/"
 
+collections:
+- posts
+- jobs
+
 paginate: 8
 
 markdown: rdiscount

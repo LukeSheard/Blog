@@ -24,12 +24,17 @@
 
   	<style type="text/css">
 	  	header{
-	  		{% if {{page.layout == "post"%}
+	  		{% if {{page.layout}} == "post" %}
 			background-image: url("/images/headers/posts/{{page.title}}.jpg");
-			{% elsif {{page.layout == "gallery"%}
+			{% elsif page.layout == "gallery"%}
 			background-image: url("/images/headers/posts/{{page.title}}.jpg");
 			{% else  %}
 			background-image: url("/images/headers/pages/{{page.title}}.jpg");
+			{% endif %}
+
+			{% if {{page.title}} == "Blog" %}
+			padding-bottom: 0;
+			margin-bottom: 0;
 			{% endif %}
 	  	}
   	</style>

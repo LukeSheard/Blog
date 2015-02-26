@@ -1,0 +1,47 @@
+---
+title: Resume
+layout: home
+---
+
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <h3 class="heading">Work Experience</h3>
+    
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+      {% for job in site.jobs %}
+        <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id='heading{{job.item}}'>
+            <small class="place">{{job.company}} {{job.location}}</small>
+            <small class="date">{{job.date}}</small>
+            <h5 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href='#collapse{{job.item}}' aria-expanded="false" aria-controls='collapse{{job.item}}'>
+                  {{job.position}}
+              </a>
+            </h5>
+            <small><a href="http://{{job.link}}" target="_blank" />{{job.link}}</a></small>
+        </div>
+        <div id='collapse{{job.item}}' class="panel-collapse collapse {% if {{job.item}} == 'One'%} in {% endif %}" role="tabpanel" aria-labelledby='heading{{jobe.item}}'>
+          <div class="panel-body">
+             {{ job.content }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+
+  <div class="col-xs-12 col-md-4">
+    <h3 class="heading">Education</h3>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab">
+        <small class="place">Berkeley, CA</small>
+        <small class="date">2014-15</small>
+        <h5 class="panel-title">UC Berkeley</h5>
+        <small><a href="http://www.berkeley.edu" target="_blank" />www.berkeley.edu</a></small>
+      </div>
+    </div>
+    <p>Undergraduate exchange year learning: <code>Python</code> with applications in numerical analysis, <code>Java</code>
+  </div>
+</div>
