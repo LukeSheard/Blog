@@ -3,13 +3,18 @@ title: Resume
 layout: home
 ---
 
+<div class="jumbotron">
+  <h1>Luke Sheard</h1>
+  <p>I am an aspiring developer &amp; product manager currently working towards an MMath degree reading mathematics at the University of California, Berkeley. After I graduate in summer of 2016 I plan on applying for a graduate program in computer science or for a job in San Francisco.</p>
+</div>
+
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
     <h3 class="heading">Work Experience</h3>
-    
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
       {% for job in site.jobs %}
+      {% if {{job.type}} == "work" %}
         <div class="panel panel-default">
         <div class="panel-heading" role="tab" id='heading{{job.item}}'>
             <small class="place">{{job.company}} {{job.location}}</small>
@@ -27,6 +32,32 @@ layout: home
           </div>
         </div>
       </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <h3 class="heading">Voluntary</h3>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+      {% for job in site.jobs %}
+      {% if {{job.type}} == "volunteer" %}
+        <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id='heading{{job.item}}'>
+            <small class="place">{{job.company}} {{job.location}}</small>
+            <small class="date">{{job.date}}</small>
+            <h5 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href='#collapse{{job.item}}' aria-expanded="false" aria-controls='collapse{{job.item}}'>
+                  {{job.position}}
+              </a>
+            </h5>
+            <small><a href="http://{{job.link}}" target="_blank" />{{job.link}}</a></small>
+        </div>
+        <div id='collapse{{job.item}}' class="panel-collapse collapse" role="tabpanel" aria-labelledby='heading{{jobe.item}}'>
+          <div class="panel-body">
+             {{ job.content }}
+          </div>
+        </div>
+      </div>
+      {% endif %}
       {% endfor %}
     </div>
 
@@ -42,6 +73,16 @@ layout: home
         <small><a href="http://www.berkeley.edu" target="_blank" />www.berkeley.edu</a></small>
       </div>
     </div>
-    <p>Undergraduate exchange year learning: <code>Python</code> with applications in numerical analysis, <code>Java</code>
+    <p>Undergraduate exchange year learning: <code>Python</code> with applications in numerical analysis, <code>Java</code></p>
+
+    <div class="panel panel-default">
+    <div class="panel-heading" role="tab">
+      <small class="place">York, UK</small>
+      <small class="date">2012-16</small>
+      <h5 class="panel-title">York University</h5>
+      <small><a href="http://www.york.ac.uk" target="_blank" />www.york.ac.uk</a></small>
+    </div>
+    </div>
+    <p>Undergraduate master's degree studying mathematics with a focus on computation and programming applications.</p>
   </div>
 </div>
