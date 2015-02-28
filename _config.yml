@@ -7,7 +7,7 @@ collections:
 - posts
 - jobs
 
-paginate: 8
+paginate: 12
 
 markdown: rdiscount
 permalink: /blog/:year/:title
@@ -16,7 +16,10 @@ highlighter: pygments
 navigation:
 - text: Home
   url: /
+  ref: /index.html
 - text: About
   url: /about/
+  ref: /about/index.html
 - text: Blog
   url: /blog/
+  ref: /blog/index.html

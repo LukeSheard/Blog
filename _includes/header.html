@@ -17,15 +17,15 @@
 
   	<style type="text/css">
 	  	header{
-	  		{% if {{page.layout}} == "post" %}
+	  		{% if page.layout == 'post' %}
 			background-image: url("/images/headers/posts/{{page.title}}.jpg");
-			{% elsif page.layout == "gallery"%}
+			{% elsif page.layout == "gallery" %}
 			background-image: url("/images/headers/posts/{{page.title}}.jpg");
 			{% else  %}
 			background-image: url("/images/headers/pages/{{page.title}}.jpg");
 			{% endif %}
 
-			{% if {{page.title}} == "Blog" %}
+			{% if page.title == "Blog" %}
 			padding-bottom: 0;
 			margin-bottom: 0;
 			{% endif %}
@@ -52,7 +52,7 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				  	<ul class="nav navbar-nav navbar-right">
 						{% for link in site.navigation %}
-						    <li {% if page.url == link.url %}class="current"{% endif %}>
+						    <li {% if {{page.url}} == {{link.ref}} %}class="open"{% endif %}>
 						       	<a href="{{link.url}}" title="{{link.title}}">{{link.text}}</a>
 						   </li>
 						{% endfor %}
