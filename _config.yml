@@ -8,6 +8,7 @@ collections:
 - jobs
 
 paginate: 12
+paginate_path: "/blog/page:num/"
 
 markdown: rdiscount
 permalink: /blog/:year/:title

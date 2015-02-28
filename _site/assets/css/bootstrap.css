@@ -3871,6 +3871,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
   border-color: #fff;
   border-bottom: 3px solid #0000ff;
   text-decoration: none;
