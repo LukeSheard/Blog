@@ -12,3 +12,11 @@ paginate: 8
 markdown: rdiscount
 permalink: /blog/:year/:title
 highlighter: pygments
+
+navigation:
+- text: Home
+  url: /
+- text: About
+  url: /about/
+- text: Blog
+  url: /blog/

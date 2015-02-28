@@ -51,21 +51,11 @@
 				<!-- NavBar Links -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				  	<ul class="nav navbar-nav navbar-right">
-						{% if {{page.layout}} == "blog" %}
-							{% include navbar-blog.html %}
-						{% elsif {{page.layout}} == "post" %}
-							{% include navbar-blog.html %}
-						{% elsif {{page.layout}} == "gallery" %}
-							{% include navbar-blog.html %}
-
-						{% elsif {{page.title}} == "About" %}
-							{% include navbar-about.html %}
-						{% elsif {{page.title}} == "Resume" %}
-							{% include navbar-about.html %}
-
-						{% else %}
-							{% include navbar-home.html %}
-						{% endif %}
+						{% for link in site.navigation %}
+						    <li {% if page.url == link.url %}class="current"{% endif %}>
+						       	<a href="{{link.url}}" title="{{link.title}}">{{link.text}}</a>
+						   </li>
+						{% endfor %}
 					</ul>
 				</div>
 			</div>
