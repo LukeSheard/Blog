@@ -4,11 +4,6 @@ layout: blog
 
 menu: blog
 ---
-
-{% for thing in site.html_pages %}
-	<a href="{{thing.url}}">{{thing.title}}</a>
-{% endfor %}
-
 <div class="blog-loop">
 	<div class="row">
 		{% for post in site.posts %}
