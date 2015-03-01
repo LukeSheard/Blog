@@ -32,6 +32,8 @@ header{
 	}
 }
 
+/* FOOTER STUFF */
+
 footer{
 	background-color: #3f3f3f;
 	color: #fff;
@@ -54,7 +56,7 @@ footer a:hover, a:focus{
 	text-align: center;
 }
 
-.social > ul{
+.social > s{
 	padding-left: 5px;
 	display: inline;
 }
@@ -70,6 +72,19 @@ footer a:hover, a:focus{
 
 .social > li > a{
 	text-decoration: none;
+}
+
+/* HOME PAGE STUFF */
+.blog-posts{
+	margin-bottom: 20px;
+	padding-bottom: 20px
+}
+
+/* CONTENT STUFF*/
+
+.center{
+	padding: 10px;
+	text-align: center;
 }
 
 .title{
@@ -142,6 +157,8 @@ hr {
   margin: 0 0 1.4em;
   border: none; 
 }
+
+/*BLOG PAGE STUFF*/
 
 .blog-loop{
 	margin: 0;
@@ -243,12 +260,6 @@ hr {
 	color: #fff;
 	background-color: #000;
 }
-
-.sidebar{
-	border-left-width: 2px;
-	border-left-color: #ddd;
-	border-left-style: solid;
-}
 .copy-center{
 	margin-left: auto;
 	margin-left: auto;
@@ -280,7 +291,33 @@ hr {
     bottom: 0;
 }
 
-.center{
-	padding: 10px;
-	text-align: center;
+/*SIDEBAR STUFF*/
+
+.sidebar{
+	margin: 0;
+	padding: 0;
+	padding-left: 15px;
+	border-left-width: 2px;
+	border-left-color: #ddd;
+	border-left-style: solid;
+}
+.sidebar h4{
+	margin: 0;
+	padding: 0;
+}
+ul.showlist{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul.showlist li{
+	margin: 0;
+	padding: 0;
+	padding-bottom: 5px;
+}
+
+ul.showlist li p{
+	margin: 0;
+	margin-bottom: 2px; 
+	padding: 0;
 }

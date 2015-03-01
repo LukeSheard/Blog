@@ -4,7 +4,10 @@ description: ""
 url: "http://www.lukesheard.com"
 
 collections:
-- jobs
+ jobs:
+ shows:
+   output: true
+   permalink: "/shows/:title/"
 
 
 paginate: 12
@@ -24,3 +27,6 @@ navigation:
 - text: Blog
   url: /blog/
   ref: /blog/index.html
+- text: Shows
+  url: /shows/
+  ref: /shows/index.html

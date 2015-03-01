@@ -17,8 +17,8 @@ menu: home
 	<p>I try and keep a reguarly updated blog, and you can read one of the latest posts by clicking one of the images below.</p>
 	<div class="blog-loop">
 		<div class="row">
-			{% for post in site.posts limit:4%}
-				<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 post" style="background-image: url('/images/headers/posts/{{post.title}}.jpg');" onclick="location.href='{{post.url}}';">
+			{% for post in site.posts limit:2%}
+				<div class="col-xs-12 col-md-6 post" style="background-image: url('/images/headers/posts/{{post.title}}.jpg');" onclick="location.href='{{post.url}}';">
 					<div class="post-title">
 						<h3>{{post.title}}</h3>
 						<h6>{{post.date | date: "%B %-d, %Y"}}</h6>
@@ -29,23 +29,22 @@ menu: home
 	</div>
 </div>
 
+<hr>
 
-<!-- 
-THIS IS RIDICULOUS FOR THE MOMENT
 <div class="blog-posts">
-	<h4>Latest Galleries</h4>
-
+	<h4>Latest Shows</h4>
+	<p>I volunteer for a magazine at Berkeley called <a href="http://www.berkeleybside.com/">B-Side</a> where I help head the photography team. Part of this means that I get to photograph bands are they tour which is a great privilige. You can see the extracts from the galleries I produce below or see more on <a href="/shows/">shows</a>.
 	<div class="blog-loop">
 		<div class="row">
-			{% for post in site.galleries limit:4%}
-				<div class="col-xs-6 col-md-3 col-lg-3 post" style="background-image: url('/images/headers/galleries/{{post.title}}.jpg');" onclick="location.href='{{post.url}}';">
+			{% assign collection = site.shows | sort: "date" | reverse %}
+			{% for item in collection limit:2 %}
+				<div class="col-xs-12 col-md-6 col-lg-6 post" style="background-image: url('/images/headers/shows/{{item.title}}.jpg');" onclick="location.href='{{post.url}}';">
 					<div class="post-title">
-						<h3>{{post.title}}</h3>
-						<h6>{{post.date | date: "%B %-d, %Y"}}</h6>
+						<h3>{{item.title}}</h3>
+						<h6>{{item.date | date: "%B %-d, %Y"}}</h6>
 					</div>
 				</div>
 			{% endfor %}
 		</div>
 	</div>
 </div>
- -->

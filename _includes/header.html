@@ -49,6 +49,8 @@
 			background-image: url("/images/headers/posts/{{page.title}}.jpg");
 			{% elsif page.layout == "gallery" %}
 			background-image: url("/images/headers/posts/{{page.title}}.jpg");
+			{% elsif page.layout == "show" %}
+			background-image: url("/images/headers/shows/{{page.title}}.jpg");
 			{% else  %}
 			background-image: url("/images/headers/pages/{{page.title}}.jpg");
 			{% endif %}
