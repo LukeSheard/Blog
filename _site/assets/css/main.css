@@ -1,0 +1,275 @@
+.body{
+	margin: 0;
+}
+
+header{
+	background-color: #000000;
+	opacity: 0.7;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	
+	box-shadow: inset 0 0 0 1000px rgba(0,0,0,.55);
+
+	background-position: 50% 50%;
+	overflow: hidden;
+	height: 100vh;
+	width: 100%;
+
+	padding-bottom: 25px;
+	margin-bottom: 50px;
+}
+
+@media screen and (min-width: 768px){
+	header{
+		height: 50vh;
+		min-height: 350px;
+	}
+}
+
+footer{
+	background-color: #3f3f3f;
+	color: #fff;
+	width: 100%;
+	bottom: 0;
+	height: 65px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}	
+footer a:hover, a:focus{
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.social{
+	display: inline;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+.social > ul{
+	padding-left: 5px;
+	display: inline;
+}
+
+.social > li{
+	font-size: 1.15em;
+	padding-right: 5px;
+	display: inline;
+}
+.social > li:last-child{
+	padding: 0;
+}
+
+.social > li > a{
+	text-decoration: none;
+}
+
+.title{
+	vertical-align: middle;
+	display: block;
+	margin-top: 10vh;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 774px){
+	.title{
+		margin-top: 25vh;
+	}
+}
+
+.title h1{
+	font-size: 7em;
+	color: #fff;
+}
+
+.title .info{
+	color: #fff;
+}
+
+.title small{
+	color: #fff;
+}
+
+.gallery{
+	margin: 0;
+	padding: 0;
+	padding-bottom: 10px;
+}
+
+#content{
+	margin-bottom: 25px;
+}
+
+#content > img {
+	max-height: 450px;
+	max-width: 350px;
+	margin-right:1%;
+	margin-left:1%;
+	margin-bottom:5px;
+}
+
+.cover > img{
+	max-height: 100%;
+	max-width: 100%;
+	width: 100%;
+	padding-bottom: 10px;
+}
+
+hr {
+  background: #ddd; 
+  clear: both; 
+  float: none; 
+  width: 100%; 
+  height: 1px;
+  margin: 0 0 1.4em;
+  border: none; 
+}
+
+.blog-loop{
+	margin: 0;
+	padding: 0;
+}
+
+.post{
+	display: table;
+	position: relative;
+	cursor:pointer;
+	font-weight: 300;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+@media (max-width: 768px) { 
+	.post{
+		min-height: 50vw;
+	}
+}
+@media (min-width: 768px) and (max-width: 992px) { 
+	.post{
+		min-height: 33.33vw;
+	}
+}
+@media (min-width: 992px) and (max-width: 1200px) { 
+	.post{
+		min-height: 22.22vw;
+	}
+}
+@media (min-width: 1200px) { 
+	.post{
+		min-height: 16.66vw;
+	}
+}
+
+.post:hover{
+	box-shadow: inset 0 0 0 1000px rgba(255,255, 255, .75);
+}
+
+.post-title{
+	*position: absolute;
+	top: 50%;
+	display: table-cell;
+	visibility: hidden;
+	vertical-align: middle;
+	text-align: center;
+  	width: 100%;
+}
+
+.post:hover .post-title{
+	visibility: visible;
+}
+
+.post-title > h3 > a{
+	font-weight: 300;
+	text-decoration: none;
+}
+
+.pagination{
+	margin-left: auto;
+	margin-right: auto;
+    width: 100%;
+}
+
+.pagination ul{
+	margin: 0;
+	padding: 0;
+	list-style: disc inside; 
+	list-style-type: disc;
+	text-align: center; 
+}
+
+.pagination li{
+	margin-left: 5px;
+	margin-right: 5px;
+	display: inline-block;
+	border-color: #3f3f3f;
+	border-style: solid;
+	border-width: 1px;
+	min-width: 2em;
+}
+
+.pagination li.inactive:hover{
+	-webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    border-width: 1px;
+	color: #0000ff;
+	border-color: #0000ff;
+}
+
+.pagination li.active{
+	color: #fff;
+	background-color: #000;
+}
+
+.sidebar{
+	border-left-width: 2px;
+	border-left-color: #ddd;
+	border-left-style: solid;
+}
+.copy-center{
+	margin-left: auto;
+	margin-left: auto;
+}
+
+@media (max-width: 992px){
+	.copy-center{
+		text-align: center;
+	}
+}
+
+.heading{
+	border-bottom: 2px solid #0000ff;
+	margin-bottom: 5px;
+}
+
+.place{
+    margin: 0;
+    padding: 0;
+    display: inline;
+    bottom: 0;
+}
+
+.date{
+    margin: 0;
+    padding: 0;
+    display: inline;
+    float: right;
+    bottom: 0;
+}
