@@ -37,11 +37,11 @@ menu: home
 	<div class="blog-loop">
 		<div class="row">
 			{% assign collection = site.shows | sort: "date" | reverse %}
-			{% for show in collection limit:2 %}
-				<div class="col-xs-12 col-md-6 col-lg-6 post" style="background-image: url('/images/headers/shows/{{show.title}}.jpg');" onclick="location.href='{{show.url}}';">
+			{% for item in collection limit:2 %}
+				<div class="col-xs-12 col-md-6 col-lg-6 post" style="background-image: url('/images/headers/shows/{{item.title}}.jpg');" onclick="location.href='{{item.url}}';">
 					<div class="post-title">
-						<h3>{{show.title}}</h3>
-						<h6>{{show.date | date: "%B %-d, %Y"}}</h6>
+						<h3>{{item.title}}</h3>
+						<h6>{{item.date | date: "%B %-d, %Y"}}</h6>
 					</div>
 				</div>
 			{% endfor %}
