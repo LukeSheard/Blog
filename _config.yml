@@ -6,7 +6,6 @@ url: "http://www.lukesheard.com"
 collections:
 - posts
 - jobs
-- galleries
 
 paginate: 12
 paginate_path: "/blog/page:num/"
