@@ -85,12 +85,12 @@ footer a:hover, a:focus{
 
 @media screen and (max-width: 774px){
 	.title{
-		margin-top: 25vh;
+		margin-top: 15vh;
 	}
 }
 
 .title h1{
-	font-size: 7em;
+	font-size: 5em;
 	color: #fff;
 }
 
@@ -100,6 +100,12 @@ footer a:hover, a:focus{
 
 .title small{
 	color: #fff;
+}
+
+@media (min-width: 768px){
+	.title h1{
+		font-size: 7em;
+	}
 }
 
 .gallery{
