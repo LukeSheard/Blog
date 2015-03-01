@@ -58,7 +58,7 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				  	<ul class="nav navbar-nav navbar-right">
 						{% for link in site.navigation %}
-						    <li {% if {{page.title}} == {{link.text}} %}class="open"{% endif %}>
+						    <li {% if {{page.url}} == {{link.ref}} %}class="open"{% endif %}>
 						       	<a href="{{link.url}}" title="{{link.title}}">{{link.text}}</a>
 						   </li>
 						{% endfor %}
