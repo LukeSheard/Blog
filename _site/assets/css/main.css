@@ -202,23 +202,27 @@ hr {
 }
 
 .pagination{
+	margin-left: auto;
+	margin-right: auto;
     width: 100%;
 }
 
 .pagination ul{
-	display: block;
+	margin: 0;
+	padding: 0;
 	list-style: disc inside; 
 	list-style-type: disc;
 	text-align: center; 
 }
 
 .pagination li{
+	margin-left: 5px;
+	margin-right: 5px;
 	display: inline-block;
 	border-color: #3f3f3f;
 	border-style: solid;
 	border-width: 1px;
 	min-width: 2em;
-	text-align: bottom;
 }
 
 .pagination li.inactive:hover{
