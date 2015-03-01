@@ -279,3 +279,8 @@ hr {
     float: right;
     bottom: 0;
 }
+
+.center{
+	padding: 10px;
+	text-align: center;
+}
