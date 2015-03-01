@@ -7,5 +7,40 @@ menu: home
 
 <div class="jumbotron">
   	<h1>Hello!</h1>
-  	<p>I'm a blogger, designer and engineer, but you can <a href="/about/">read more</a> about that else where. Really I have a passion for building things that worka and spread ideas and experiences.</p>
+  	<p>I'm a blogger, designer and engineer, but you can <a href="/about/">read more</a> about that else where. Really I just have a passion for building things that work, and for spread my ideas and experiences.</p>
 </div>
+
+<div class="blog-posts">
+	<h4>Latest Blog Posts</h4>
+	<div class="blog-loop">
+		<div class="row">
+			{% for post in site.posts limit:4%}
+				<div class="col-xs-6 col-md-3 col-lg-3 post" style="background-image: url('/images/headers/posts/{{post.title}}.jpg');" onclick="location.href='{{post.url}}';">
+					<div class="post-title">
+						<h3>{{post.title}}</h3>
+						<h6>{{post.date | date: "%B %-d, %Y"}}</h6>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+<!-- 
+FOR LATER ADDITIONS WHEN I HAVE THE GALLERIES UP
+<div class="blog-posts">
+	<h4>Latest Galleries</h4>
+	<div class="blog-loop">
+		<div class="row">
+			{% for post in site.galleries limit:4%}
+				<div class="col-xs-6 col-md-3 col-lg-3 post" style="background-image: url('/images/headers/galleries/{{post.title}}.jpg');" onclick="location.href='{{post.url}}';">
+					<div class="post-title">
+						<h3>{{post.title}}</h3>
+						<h6>{{post.date | date: "%B %-d, %Y"}}</h6>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+ -->
