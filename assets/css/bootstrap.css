@@ -3442,7 +3442,13 @@ tbody.collapse.in {
   background-color: #e5e5e5;
 }
 .dropdown-menu > li {
+  line-height: 1.4em;
+  padding-top: 2px;
+  padding-bottom: 2px;
   background-color: #fff;
+}
+.dropdown-menu > li:last{
+  margin-bottom: 3px;
 }
 .dropdown-menu > li > a {
   display: block;
