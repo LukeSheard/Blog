@@ -3,6 +3,7 @@
 }
 
 header{
+	position: relative;
 	background-color: #000000;
 	opacity: 0.7;
 
@@ -29,6 +30,40 @@ header{
 	header{
 		height: 50vh;
 		min-height: 350px;
+	}
+}
+
+.title{
+	position: absolute;
+	width: 75%;
+	margin: 2% 12.5%;
+	vertical-align: middle;
+	display: inline-block;
+	text-align: center;
+}
+
+@media screen and (max-width: 774px){
+	.title{
+		margin-top: 15vh;
+	}
+}
+
+.title h1{
+	font-size: 5em;
+	color: #fff;
+}
+
+.title .info{
+	color: #fff;
+}
+
+.title small{
+	color: #fff;
+}
+
+@media (min-width: 768px){
+	.title h1{
+		font-size: 7em;
 	}
 }
 
@@ -85,42 +120,6 @@ footer a:hover, a:focus{
 .center{
 	padding: 10px;
 	text-align: center;
-}
-
-.title{
-	vertical-align: middle;
-	display: block;
-	margin-top: 10vh;
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 50px;
-	margin-left: 10px;
-	margin-right: 10px;
-}
-
-@media screen and (max-width: 774px){
-	.title{
-		margin-top: 15vh;
-	}
-}
-
-.title h1{
-	font-size: 5em;
-	color: #fff;
-}
-
-.title .info{
-	color: #fff;
-}
-
-.title small{
-	color: #fff;
-}
-
-@media (min-width: 768px){
-	.title h1{
-		font-size: 7em;
-	}
 }
 
 .gallery{
