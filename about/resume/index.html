@@ -14,50 +14,59 @@ layout: home
     <h3 class="heading">Work Experience</h3>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
       {% for job in site.jobs %}
-      {% if {{job.type}} == "work" %}
-        <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id='heading{{job.item}}'>
-            <small class="place">{{job.company}} {{job.location}}</small>
-            <small class="date">{{job.range}}</small>
-            <h5 class="panel-title">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href='#collapse{{job.item}}' aria-expanded="false" aria-controls='collapse{{job.item}}'>
-                  {{job.position}}
-              </a>
-            </h5>
-            <small><a href="http://{{job.link}}" target="_blank" />{{job.link}}</a></small>
-        </div>
-        <div id='collapse{{job.item}}' class="panel-collapse collapse" role="tabpanel" aria-labelledby='heading{{jobe.item}}'>
-          <div class="panel-body">
-             {{ job.content }}
+        {% if {{job.type}} == "work" %}
+          <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id='heading{{job.item}}'>
+              <small class="place">
+                {% if job.company != nil %}
+                  {{job.company}},
+                {% endif %} 
+                {{job.location}}</small>
+              <small class="date">{{job.range}}</small>
+              <h5 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href='#collapse{{job.item}}' aria-expanded="false" aria-controls='collapse{{job.item}}'>
+                    {{job.position}}
+                </a>
+              </h5>
+              <small><a href="http://{{job.link}}" target="_blank" />{{job.link}}</a></small>
+          </div>
+          <div id='collapse{{job.item}}' class="panel-collapse collapse" role="tabpanel" aria-labelledby='heading{{jobe.item}}'>
+            <div class="panel-body">
+               {{ job.content }}
+            </div>
           </div>
         </div>
-      </div>
-      {% endif %}
+        {% endif %}
       {% endfor %}
     </div>
 
     <h3 class="heading">Voluntary</h3>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
       {% for job in site.jobs %}
-      {% if {{job.type}} == "volunteer" %}
-        <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id='heading{{job.item}}'>
-            <small class="place">{{job.company}} {{job.location}}</small>
-            <small class="date">{{job.date}}</small>
-            <h5 class="panel-title">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href='#collapse{{job.item}}' aria-expanded="false" aria-controls='collapse{{job.item}}'>
-                  {{job.position}}
-              </a>
-            </h5>
-            <small><a href="http://{{job.link}}" target="_blank" />{{job.link}}</a></small>
-        </div>
-        <div id='collapse{{job.item}}' class="panel-collapse collapse" role="tabpanel" aria-labelledby='heading{{jobe.item}}'>
-          <div class="panel-body">
-             {{ job.content }}
+        {% if {{job.type}} == "volunteer" %}
+          <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id='heading{{job.item}}'>
+              <small class="place">
+                {% if job.company != nil %}
+                  {{job.company}},
+                {% endif %} 
+                {{job.location}}</small>
+              <small class="date">{{job.range}}</small>
+              <small class="date">{{job.date}}</small>
+              <h5 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href='#collapse{{job.item}}' aria-expanded="false" aria-controls='collapse{{job.item}}'>
+                    {{job.position}}
+                </a>
+              </h5>
+              <small><a href="http://{{job.link}}" target="_blank" />{{job.link}}</a></small>
+          </div>
+          <div id='collapse{{job.item}}' class="panel-collapse collapse" role="tabpanel" aria-labelledby='heading{{jobe.item}}'>
+            <div class="panel-body">
+               {{ job.content }}
+            </div>
           </div>
         </div>
-      </div>
-      {% endif %}
+        {% endif %}
       {% endfor %}
     </div>
 

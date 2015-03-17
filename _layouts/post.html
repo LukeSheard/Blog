@@ -27,6 +27,12 @@
 			</div>
 		</div>
 
+		<div class="row">
+			<div class="col-xs-12 col-md-8">
+			Written by Luke Sheard.
+			</div>
+		</div>
+
 		
 	  	<div class="hidden-xs hidden-sm col-md-3 sidebar">
 	  		{% include sidebar.html %}
@@ -38,6 +44,17 @@
 <div class="container">
 	<div id="content">
 		{{ content }}
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 box">
+			<a href="#myCarousel" class="navigate-left">
+				<p><i class="fa fa-angle-left icon"></i> Previous</p>
+			</a>
+			<a href="#myCarousel" class="navigate-right">
+				<p>Next <i class="fa fa-angle-right icon"></i></p>
+			</a>
+		</div>
 	</div>
 </div>
 
