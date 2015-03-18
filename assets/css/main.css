@@ -105,6 +105,7 @@ footer a:hover, a:focus{
 }
 
 .social{
+	right: 0;
 	display: inline;
 	margin: 0;
 	padding: 0;
@@ -119,7 +120,7 @@ footer a:hover, a:focus{
 
 .social > li{
 	font-size: 1.15em;
-	padding-right: 5px;
+	padding-right: 7.5px;
 	display: inline;
 }
 .social > li:last-child{
@@ -314,25 +315,72 @@ hr {
 }
 
 .box{
-	margin-top: 20px;
+	margin: 20px auto;
+	padding: 0;
+	display: table;
 	margin-bottom: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
 	border-bottom: 1px solid #ddd;
 	border-top: 1px solid #ddd;
 }
 
-.icon{
-	font-size: 2em;
+.prev_post{
+	left: 0;
+	width: 50%;
+	max-width: 50%;
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	text-align: left;
+	display: table-cell;
+	vertical-align: middle;
 }
-.navigate-left{
-	float: left;
-	left: 5px;
+
+.prev_post:hover{
+	-webkit-transition: 1s;
+  	transition: 1s;
+	color: #0000ff;
+	background-color: #EAEAEA;
 }
-.navigate-right{
-	float: right;
-    right: 5px;
+
+small.nocolor{
+	color: #333333;
 }
+
+.next_post{
+	width: 50%;
+	max-width: 50%;
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	text-align: right;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.next_post:hover{
+	-webkit-transition: 0.5s;
+  	transition: 0.5s;
+	color: #0000ff;
+	background-color: #EAEAEA;
+}
+
+.filler{
+	width: 50%;
+	max-width: 50%;
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	text-align: right;
+	display: table-cell;
+	vertical-align: middle;
+}
+
 
 /*SIDEBAR STUFF*/
 
@@ -363,4 +411,26 @@ ul.showlist li p{
 	margin: 0;
 	margin-bottom: 2px; 
 	padding: 0;
+}
+
+/* RESUME STUFF */
+ul.skills{
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.skills li{
+	font-weight: 400;
+  	font-size: 1.1em;
+	display: inline-block;
+	padding: 4px;
+	margin: 3px;
+	border-radius: 6px;
+	border: 1.5px solid #0000ff;
+}
+
+ul.skills li > code{
+	background: transparent;
 }

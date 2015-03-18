@@ -13,6 +13,13 @@
 	<!-- CSS Files-->
 	<link href="/assets/css/bootstrap.css" rel="stylesheet">
 	<link href="/assets/css/main.css" rel="stylesheet">
+
+	<!-- Javascript Files -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script>
+        $("#carousel").carousel();
+    </script>
 	
 	<!-- Google Analytics -->
 	<script>
@@ -36,6 +43,23 @@
 	    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  	})();
 	</script>
+
+	{% if page.title == "Resume" %}
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var $ul = $('.skills')
+            var $liArr = $ul.children('li');
+            
+            $liArr.sort(function(a,b){
+		        var temp = parseInt( Math.random()*10 );
+		        var isOddOrEven = temp%2;
+		        var isPosOrNeg = temp>5 ? 1 : -1;
+		        return( isOddOrEven*isPosOrNeg );
+            })
+            .appendTo($ul);
+		});
+	</script>
+	{% endif %}
 
   	<style type="text/css">
 	  	header{
