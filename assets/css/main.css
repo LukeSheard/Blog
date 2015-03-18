@@ -139,13 +139,20 @@ footer a:hover, a:focus{
 
 /* CONTENT STUFF*/
 
+.clear{
+	margin-top: 10px;
+	padding-top: 10px;
+	clear: both;
+}
+
 .center{
 	padding: 10px;
 	text-align: center;
 }
 
 .gallery{
-	margin: 0;
+	max-width: 640px;
+	margin: 0 auto;
 	padding: 0;
 	padding-bottom: 10px;
 }
@@ -315,6 +322,7 @@ hr {
 }
 
 .box{
+	clear: both;
 	margin: 20px auto;
 	padding: 0;
 	display: table;
