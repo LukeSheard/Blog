@@ -10,7 +10,7 @@
 			"location" 	: "{{ item.location 	}}",
 			"url"		: "{{ item.url }}",
 			"likes"		: "0",
-		}
+		},
 	{% endfor %}
 	]
 }
