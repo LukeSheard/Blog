@@ -6,61 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ site.description }}">
 	
-	<!-- Fonts -->
+	<!-- STYLING -->
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-	<!-- CSS Files-->
 	<link href="/assets/css/bootstrap.css" rel="stylesheet">
 	<link href="/assets/css/main.css" rel="stylesheet">
 
 	<!-- Javascript Files -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/main.js"></script>
     <script>
         $("#carousel").carousel();
     </script>
-	
-	<!-- Google Analytics -->
-	<script>
-	  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  	ga('create', 'UA-49746829-1', 'auto');
-	  	ga('send', 'pageview');
-
-	</script>
-	<script type="text/javascript">
-	  	var _gaq = _gaq || [];
-	  	_gaq.push(['_setAccount', 'UA-49746829-1']);
-	  	_gaq.push(['_trackPageview']);
-
-	  	(function() {
-	    	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  	})();
-	</script>
-
-	{% if page.title == "Resume" %}
-	<script type="text/javascript">
-		$(document).ready(function(){
-			var $ul = $('.skills')
-            var $liArr = $ul.children('li');
-            
-            $liArr.sort(function(a,b){
-		        var temp = parseInt( Math.random()*10 );
-		        var isOddOrEven = temp%2;
-		        var isPosOrNeg = temp>5 ? 1 : -1;
-		        return( isOddOrEven*isPosOrNeg );
-            })
-            .appendTo($ul);
-		});
-	</script>
+    {% if page.title == "Resume" %}
+	  	<script type="text/javascript">
+		    $(document).ready(function(){
+		      var $ul = $('.skills')
+		            var $liArr = $ul.children('li');
+		            
+		            $liArr.sort(function(a,b){
+		            var temp = parseInt( Math.random()*10 );
+		            var isOddOrEven = temp%2;
+		            var isPosOrNeg = temp>5 ? 1 : -1;
+		            return( isOddOrEven*isPosOrNeg );
+		            })
+		            .appendTo($ul);
+		    });
+		</script>
 	{% endif %}
 
+	<script>
+	    $(document).ready(function(){
+	      	var likes = 10;
+	      	if ($(".heart")[0]){
+		      	var heart = document.getElementById("heart");
+		      	var total = document.getElementById("total");
+		      	total.innerHTML = likes + " people like this";
+
+		      	heart.onclick = function(){
+		        	if (heart.className == "likeme glyphicon glyphicon-heart-empty") {
+		          	heart.className = "liked glyphicon glyphicon-heart";
+		          	likes = likes + 1;
+		          	total.innerHTML = likes + " people like this";
+		        	}
+		      	};
+		  	}
+	    });
+
+	    $(document).ready(function(){
+	    	var json = $.getJSON("posts.json")
+	    });
+	</script>
+	
+
+	<!-- HEADER IMAGES -->
   	<style type="text/css">
 	  	header{
 	  		{% if page.layout == 'post' %}
@@ -80,6 +81,7 @@
 	  	}
   	</style>
 </head>
+
 <body>
 	<header id="header">
 		<nav class="navbar">
