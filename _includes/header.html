@@ -33,6 +33,7 @@
 
 	    $(document).ready(function(){
 	    	var title = document.getElementById("PageTitle").innerHTML;
+	    	console.log(title)
 
 	    	$.getJSON("/posts.json", function(data){
 	    		$.each(data, function(i){
@@ -46,21 +47,18 @@
 				      	heart.onclick = function(){
 				        	if (heart.className == "likeme glyphicon glyphicon-heart-empty") {
 					          	heart.className = "liked glyphicon glyphicon-heart";
-					          	likes = likes + 1;
-					          	total.innerHTML = people(likes)
-					          	data[i].Likes = likes
+					          	data[i].Likes = likes + 1
+					          	total.innerHTML = people(data[i].Likes)
+					          	
+					          	var json = JSON.stringify(data)
 				        	}
 				      	};
 	    			}
 	    		})	
-	    	}) 	
-	    });
-	</script>
+	    	}) 
 
-	{% if page.title == "Resume" %}
-	  	<script type="text/javascript">
-		    $(document).ready(function(){
-		      var $ul = $('.skills')
+	    	if(title === "Resume"){
+	    		var $ul = $('.skills')
 		            var $liArr = $ul.children('li');
 		            
 		            $liArr.sort(function(a,b){
@@ -70,9 +68,9 @@
 		            return( isOddOrEven*isPosOrNeg );
 		            })
 		            .appendTo($ul);
-		    });
-		</script>
-	{% endif %}
+	    	}	
+	    });
+	</script>
 	
 
 	<!-- HEADER IMAGES -->
