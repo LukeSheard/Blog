@@ -20,7 +20,44 @@
         $("#carousel").carousel();
     </script>
 
-    {% if page.title == "Resume" %}
+	<script>
+		function people(like){
+      		if(like === 0){
+      			return "Be the first to like this!"
+	      	} else if(like === 1){
+	      		return like + " person likes this!"
+	      	} else{
+	      		return like + " people like this!";
+	      	}
+      	};
+
+	    $(document).ready(function(){
+	    	var title = document.getElementById("PageTitle").innerHTML;
+
+	    	$.getJSON("/posts.json", function(data){
+	    		$.each(data, function(i){
+	    			if(data[i].Title === title){
+	    				var likes = data[i].Likes
+
+	    				var heart = document.getElementById("heart");
+				      	var total = document.getElementById("total");
+				      	total.innerHTML = people(likes)
+
+				      	heart.onclick = function(){
+				        	if (heart.className == "likeme glyphicon glyphicon-heart-empty") {
+					          	heart.className = "liked glyphicon glyphicon-heart";
+					          	likes = likes + 1;
+					          	total.innerHTML = people(likes)
+					          	data[i].Likes = likes
+				        	}
+				      	};
+	    			}
+	    		})	
+	    	}) 	
+	    });
+	</script>
+
+	{% if page.title == "Resume" %}
 	  	<script type="text/javascript">
 		    $(document).ready(function(){
 		      var $ul = $('.skills')
@@ -36,29 +73,6 @@
 		    });
 		</script>
 	{% endif %}
-
-	<script>
-	    $(document).ready(function(){
-	      	var likes = 10;
-	      	if ($(".heart")[0]){
-		      	var heart = document.getElementById("heart");
-		      	var total = document.getElementById("total");
-		      	total.innerHTML = likes + " people like this";
-
-		      	heart.onclick = function(){
-		        	if (heart.className == "likeme glyphicon glyphicon-heart-empty") {
-		          	heart.className = "liked glyphicon glyphicon-heart";
-		          	likes = likes + 1;
-		          	total.innerHTML = likes + " people like this";
-		        	}
-		      	};
-		  	}
-	    });
-
-	    $(document).ready(function(){
-	    	var json = $.getJSON( "posts.json")
-	    });
-	</script>
 	
 
 	<!-- HEADER IMAGES -->

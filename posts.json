@@ -1,17 +1,13 @@
 ---
 ---
-
-{
-	"posts":[
-	{% for item in site.posts %}
-		{
-			"title"		: "{{ item.title 	}}",
-			"date" 		: "{{ item.date  	}}",
-			"location" 	: "{{ item.location 	}}",
-			"url"		: "{{ item.url }}",
-			"likes"		: "0"
-		}, 
-	{% endfor %}
+[{% for item in site.posts %}
+	{
+		"Title"		: "{{ item.title 	}}",
+		"Date" 		: "{{ item.date  	}}",
+		"Location" 	: "{{ item.location 	}}",
+		"Url"		: "{{ item.url }}",
+		"Likes"		: 0
+	}, 
+{% endfor %}
 	false
-	]
-}
+]
