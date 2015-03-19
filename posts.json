@@ -1,0 +1,13 @@
+---
+---
+[{% for item in site.posts %}
+	{
+		"Title"		: "{{ item.title 	}}",
+		"Date" 		: "{{ item.date  	}}",
+		"Location" 	: "{{ item.location 	}}",
+		"Url"		: "{{ item.url }}",
+		"Likes"		: 0
+	}, 
+{% endfor %}
+	false
+]
