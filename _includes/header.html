@@ -21,6 +21,28 @@
     </script>
 
 	<script>
+		$(window).load(function(){
+			var date = new Date();
+			var recent = localStorage.getItem("visited");
+			var lastVisit = new Date(localStorage.getItem("date"));
+			var difference = (date - lastVisit)/(1000)
+
+
+			if( (recent !== "true") && (difference > 10)){
+				localStorage.setItem("visited", "true");
+				localStorage.setItem("date", date );
+			} else if((recent !== "true") && (difference < 10)){
+
+				$('#myModal').modal('show');
+				localStorage.setItem("date", date );
+			} else {
+				
+				$('#myModal').modal('show');
+				localStorage.setItem("visited", "true");
+				localStorage.setItem("date", date );
+			}
+	    });
+
 		function people(like){
       		if(like === 0){
       			return "Be the first to like this!"
@@ -32,8 +54,8 @@
       	};
 
 	    $(document).ready(function(){
+
 	    	var title = document.getElementById("PageTitle").innerHTML;
-	    	console.log(title)
 
 	    	$.getJSON("/posts.json", function(data){
 	    		$.each(data, function(i){

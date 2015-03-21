@@ -6,7 +6,7 @@
 		"Date" 		: "{{ item.date  	}}",
 		"Location" 	: "{{ item.location 	}}",
 		"Url"		: "{{ item.url }}",
-		"Likes"		: 0
+		"Likes"		: 
 	}, 
 {% endfor %}
 	false
