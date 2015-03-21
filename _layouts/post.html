@@ -46,12 +46,6 @@
 		{{ content }}
 	</div>
 
-			
-	<div class="container post-info">
-		<p id="total">people like this</p>
-		<span id="heart" class="likeme glyphicon glyphicon-heart-empty"></span>
-	</div>
-
 	<div class="container box">
 		{% for post in site.posts %}
 	        {% if post.url == page.url %}
@@ -75,9 +69,6 @@
 	    {% if next_post %}
 	    	
 	    {% endif %}
-
-	
-
 	    {% if prev_post %}
 	    	<div class="prev_post" onclick="location.href='{{prev_post}}'">
 	    			<small class="nocolor">PREVIOUS POST</small>
