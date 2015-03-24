@@ -70,7 +70,7 @@ $(document).ready(function(){
               $.ajax({
                   type: "POST",
                   // url: "/Systems/editLikes.php",
-                  // url: "http://systems.lukesheard.com/editLikes.php",
+                  url: "http://systems.lukesheard.com/editLikes.php",
                   data: phpString,
                   dataType: "json",
                   success: function(data){
