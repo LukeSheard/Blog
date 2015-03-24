@@ -67,7 +67,7 @@ $(document).ready(function(){
                 title: String(title),
                 likes: String(data[i].Likes)
               }
-              $.post("/Systems/editLikes.php", phpString, function(data){
+              $.post("http://systems.lukesheard.com/editLikes.php", phpString, function(data){
                 alert(data)
               });
           }
