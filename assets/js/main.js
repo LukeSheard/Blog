@@ -63,15 +63,12 @@ $(document).ready(function(){
               total.innerHTML = people(data[i].Likes)
               
               localStorage.setItem(title, "liked");
-              var phpString = {
-                title: String(title),
-                likes: String(data[i].Likes)
-              };
+              var phpString = { title: String(title), likes: String(data[i].Likes) };
               $.ajax({
                   type: "POST",
                   // url: "/Systems/editLikes.php",
                   url: "http://systems.lukesheard.com/editLikes.php",
-                  data: JSON.stringify(phpString),
+                  data: JSON.stringify(phpString).serialize();,
                   dataType: "json",
                   success: function(data){
                     console.log(data);
