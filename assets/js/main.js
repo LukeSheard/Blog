@@ -79,8 +79,8 @@ $(document).ready(function(){
                   failure: function(){
                     console.log("Failure!");
                   },
-                  error: function(ts) {
-                    console.log(ts.responseText);
+                  error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
                   }
               });
           }
