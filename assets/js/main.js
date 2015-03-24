@@ -71,8 +71,8 @@ $(document).ready(function(){
                   type: "POST",
                   // url: "/Systems/editLikes.php",
                   url: "http://systems.lukesheard.com/editLikes.php",
-                  // data: JSON.stringify(phpString),
-                  dataType: "jsonp",
+                  data: JSON.stringify(phpString),
+                  dataType: "json",
                   success: function(data){
                     console.log(data);
                   },
