@@ -75,7 +75,7 @@ $(document).ready(function(){
                   dataType: "jsonp",
                   success: function(){
                     alert("hello!")
-                  }
+                  },
                   failure: function(){
                     alert("failure!")
                   }
