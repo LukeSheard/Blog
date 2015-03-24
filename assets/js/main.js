@@ -66,7 +66,7 @@ $(document).ready(function(){
               var phpString = {
                 title: String(title),
                 likes: String(data[i].Likes)
-              }
+              };
               $.ajax({
                   type: "POST",
                   // url: "/Systems/editLikes.php",
@@ -75,9 +75,6 @@ $(document).ready(function(){
                   dataType: "json",
                   success: function(data){
                     console.log(data);
-                  },
-                  failure: function(){
-                    console.log("Failure!");
                   },
                   error: function(jqXHR, textStatus, errorThrown) {
                     console.log(textStatus, errorThrown);
