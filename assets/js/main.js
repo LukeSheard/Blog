@@ -73,11 +73,11 @@ $(document).ready(function(){
                   url: "http://systems.lukesheard.com/editLikes.php",
                   data: phpString,
                   dataType: "jsonp",
-                  success: function(){
-                    alert("hello!")
+                  success: function(data){
+                    console.log(data);
                   },
                   failure: function(){
-                    alert("failure!")
+                    console.log("Failure!");
                   }
               });
           }
