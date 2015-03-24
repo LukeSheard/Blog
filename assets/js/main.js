@@ -58,27 +58,24 @@ $(document).ready(function(){
 
         heart.onclick = function(){
           if (heart.className == "likeme glyphicon glyphicon-heart-empty") {
-              heart.className = "liked glyphicon glyphicon-heart";
-              data[i].Likes = likes + 1
-              total.innerHTML = people(data[i].Likes)
-              
-              localStorage.setItem(title, "liked");
-              var phpString = { title: String(title), likes: String(data[i].Likes) };
-              phpString = JSON.stringify(phpString);
-              
-              $.ajax({
-                  type: "POST",
-                  // url: "/Systems/editLikes.php",
-                  url: "http://systems.lukesheard.com/editLikes.php",
-                  data: phpString,
-                  dataType: "json",
-                  success: function(data){
-                    console.log(data);
-                  },
-                  error: function(jqXHR, textStatus, errorThrown) {
-                    console.log(textStatus, errorThrown);
-                  }
-              });
+            heart.className = "liked glyphicon glyphicon-heart";
+            data[i].Likes = likes + 1;
+            total.innerHTML = people(data[i].Likes);
+            
+            localStorage.setItem(title, "liked");
+            var phpString = String(title);
+
+            $.ajax({
+              type: "POST",
+              url: "http://systems.lukesheard.com/editLikes.php",
+              data: phpString,
+              success: function(data){
+                console.log(data);
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+              }
+            });
           }
         };
       }
