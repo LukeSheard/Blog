@@ -64,11 +64,13 @@ $(document).ready(function(){
               
               localStorage.setItem(title, "liked");
               var phpString = { title: String(title), likes: String(data[i].Likes) };
+              phpString = JSON.stringify(phpString);
+              
               $.ajax({
                   type: "POST",
                   // url: "/Systems/editLikes.php",
                   url: "http://systems.lukesheard.com/editLikes.php",
-                  data: JSON.stringify(phpString),
+                  data: phpString,
                   dataType: "json",
                   success: function(data){
                     console.log(data);
