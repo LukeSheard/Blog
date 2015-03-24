@@ -1,5 +1,5 @@
 <?php
-header("Access-Control-Allow-Origin: http://lukesheard.com");
+header("Access-Control-Allow-Origin: http://www.lukesheard.com");
 
 echo "Hello!";
 ?>
