@@ -72,7 +72,7 @@ $(document).ready(function(){
                   // url: "/Systems/editLikes.php",
                   url: "http://systems.lukesheard.com/editLikes.php",
                   data: phpString,
-                  dataType: "json",
+                  dataType: "jsonp",
                   success: function(data){
                     alert("hello!")
                   }
