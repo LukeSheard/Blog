@@ -70,7 +70,7 @@ $(document).ready(function(){
               url: "http://systems.lukesheard.com/editLikes.php",
               data: phpString,
               success: function(data){
-                console.log(data);
+                console.log(data.returned_val);
               },
               error: function(jqXHR, textStatus, errorThrown) {
                 console.log(textStatus, errorThrown);
