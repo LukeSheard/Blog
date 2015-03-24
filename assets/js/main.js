@@ -78,6 +78,9 @@ $(document).ready(function(){
                   },
                   failure: function(){
                     console.log("Failure!");
+                  },
+                  error: function() {
+                    console.log('Error occurs!');
                   }
               });
           }
