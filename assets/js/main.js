@@ -67,8 +67,15 @@ $(document).ready(function(){
                 title: String(title),
                 likes: String(data[i].Likes)
               }
-              $.post("http://systems.lukesheard.com/editLikes.php", phpString, function(data){
-                alert(data)
+              $.ajax({
+                  type: "POST",
+                  // url: "/Systems/editLikes.php",
+                  // url: "http://systems.lukesheard.com/editLikes.php",
+                  data: phpString,
+                  dataType: "json",
+                  success: function(data){
+                    alert("hello!")
+                  }
               });
           }
         };
