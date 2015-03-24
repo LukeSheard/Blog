@@ -16,61 +16,6 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/main.js"></script>
-    <script>
-        $("#carousel").carousel();
-    </script>
-
-	<script>
-		function people(like){
-      		if(like === 0){
-      			return "Be the first to like this!"
-	      	} else if(like === 1){
-	      		return like + " person likes this!"
-	      	} else{
-	      		return like + " people like this!";
-	      	}
-      	};
-
-	    $(document).ready(function(){
-	    	var title = document.getElementById("PageTitle").innerHTML;
-	    	console.log(title)
-
-	    	$.getJSON("/posts.json", function(data){
-	    		$.each(data, function(i){
-	    			if(data[i].Title === title){
-	    				var likes = data[i].Likes
-
-	    				var heart = document.getElementById("heart");
-				      	var total = document.getElementById("total");
-				      	total.innerHTML = people(likes)
-
-				      	heart.onclick = function(){
-				        	if (heart.className == "likeme glyphicon glyphicon-heart-empty") {
-					          	heart.className = "liked glyphicon glyphicon-heart";
-					          	data[i].Likes = likes + 1
-					          	total.innerHTML = people(data[i].Likes)
-					          	
-					          	var json = JSON.stringify(data)
-				        	}
-				      	};
-	    			}
-	    		})	
-	    	}) 
-
-	    	if(title === "Resume"){
-	    		var $ul = $('.skills')
-		            var $liArr = $ul.children('li');
-		            
-		            $liArr.sort(function(a,b){
-		            var temp = parseInt( Math.random()*10 );
-		            var isOddOrEven = temp%2;
-		            var isPosOrNeg = temp>5 ? 1 : -1;
-		            return( isOddOrEven*isPosOrNeg );
-		            })
-		            .appendTo($ul);
-	    	}	
-	    });
-	</script>
 	
 
 	<!-- HEADER IMAGES -->
@@ -95,6 +40,23 @@
 </head>
 
 <body>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  	<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        		<h4 class="modal-title" id="myModalLabel">Watch Out!</h4>
+	      		</div>
+		      	<div class="modal-body">
+		        <p>Please note this website is still in development, if you see any mistakes please feel free to <a href="mailto:me@lukesheard.com">e-mail me</a> with updates!
+		      	</div>
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      		</div>
+	    	</div>
+	  	</div>
+	</div>
+
 	<header id="header">
 		<nav class="navbar">
 		  	<div class="container-fluid">

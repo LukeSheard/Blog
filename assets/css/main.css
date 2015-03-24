@@ -333,6 +333,12 @@ hr {
 }
 
 .post-info{
+	clear: both;
+	margin: 20px auto;
+	padding: 0;
+	display: table;
+	margin-bottom: 20px;
+	border-top: 1px solid #ddd;
 	height: 3em;
 	line-height: 2em;
 	padding: 5px;
@@ -345,6 +351,7 @@ hr {
 }
 
 .likeMe{
+	cursor: pointer;
 	display: inline;
 	font-size: 1.5em;
 }
@@ -362,6 +369,7 @@ hr {
 }
 
 .prev_post{
+	cursor: pointer;
 	left: 0;
 	width: 50%;
 	max-width: 50%;
@@ -387,6 +395,7 @@ small.nocolor{
 }
 
 .next_post{
+	cursor: pointer;
 	width: 50%;
 	max-width: 50%;
 	margin: 0;
