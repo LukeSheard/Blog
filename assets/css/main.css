@@ -153,9 +153,19 @@ footer a:hover, a:focus{
 .gallery{
 	width: 100%;
 	max-width: 640px;
+	max-height: 480px;
 	margin: 0 auto;
 	padding: 0;
 	padding-bottom: 10px;
+}
+
+.item{
+	background-color: #D0D0D0;
+}
+
+.item > img{
+	margin: 0 auto;
+	max-height: 420px;
 }
 
 #content{
@@ -235,7 +245,6 @@ hr {
 }
 
 .post-title{
-	*position: absolute;
 	top: 50%;
 	display: table-cell;
 	visibility: hidden;
@@ -335,7 +344,6 @@ hr {
 .post-info{
 	clear: both;
 	margin: 20px auto;
-	padding: 0;
 	display: table;
 	margin-bottom: 20px;
 	border-top: 1px solid #ddd;
@@ -343,6 +351,11 @@ hr {
 	line-height: 2em;
 	padding: 5px;
 	text-align: right;
+}
+
+.likes{
+	display: table-cell;
+	width: 100%;
 }
 
 #total{

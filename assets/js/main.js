@@ -30,7 +30,7 @@ function people(like){
     if(like === 0){
       return "Please consider liking this!"
     } else if(like === 1){
-      return "Thankyou for liking this!"
+      return "Thankyou for liking this!";
       // return like + " person likes this!"
     } else{
       return like + " people like this!";
@@ -38,6 +38,7 @@ function people(like){
   };
 
 $(document).ready(function(){
+  localStorage.clear();
   var title = document.getElementById("PageTitle").innerHTML;
 
   $.getJSON("/posts.json", function(data){
@@ -62,6 +63,13 @@ $(document).ready(function(){
               total.innerHTML = people(data[i].Likes)
               
               localStorage.setItem(title, "liked");
+              var phpString = {
+                title: String(title),
+                likes: String(data[i].Likes)
+              }
+              $.post("/Systems/editLikes.php", phpString, function(data){
+                alert(data)
+              });
           }
         };
       }
@@ -82,17 +90,22 @@ $(document).ready(function(){
   } 
 });
 
+
+
 $(window).load(function(){
   var now = new Date();
   now = now.getTime()
-  var date = Date.parse(localStorage.date);
-  var difference = now - date;
-  difference = difference / 86400000;
 
-
-  if(difference > 1){
+  if(Date.parse(localStorage.date) !== null){
+    var date = Date.parse(localStorage.date);
+    var difference = now - date;
+    difference = difference / 86400000;
+      if(difference > 1){
+      $('#myModal').modal('show');
+    }
+  } else {
     $('#myModal').modal('show');
-  } 
-
+  }
+  
   localStorage.date = new Date();
 });

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-   	<title>Luke Sheard | {{ page.title }}</title>
+   	<title>Luke Sheard | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ site.description }}">
+    <meta name="description" content="">
 	
 	<!-- STYLING -->
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
@@ -21,20 +21,11 @@
 	<!-- HEADER IMAGES -->
   	<style type="text/css">
 	  	header{
-	  		{% if page.layout == 'post' %}
-			background-image: url("/images/headers/posts/{{page.title}}.jpg");
-			{% elsif page.layout == "gallery" %}
-			background-image: url("/images/headers/posts/{{page.title}}.jpg");
-			{% elsif page.layout == "show" %}
-			background-image: url("/images/headers/shows/{{page.title}}.jpg");
-			{% else  %}
-			background-image: url("/images/headers/pages/{{page.title}}.jpg");
-			{% endif %}
+	  		
+			background-image: url("/images/headers/pages/Home.jpg");
+			
 
-			{% if page.layout == "blog" %}
-			padding-bottom: 0;
-			margin-bottom: 0;
-			{% endif %}
+			
 	  	}
   	</style>
 </head>
@@ -75,17 +66,71 @@
 				<!-- NavBar Links -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				  	<ul class="nav navbar-nav navbar-right">
-						{% for link in site.navigation %}{% if link.url != "/about/" %} <li {% if {{page.url}} == {{link.ref}} %}class="open"{% endif %}>
-						       	<a href="{{link.url}}" title="{{link.text}}">{{link.text}}</a>
-						   	</li> {% else%} <li class="dropdown">
+						
+							
+						    <li class="open">
+						       	<a href="/" title="Home">Home</a>
+						   	</li>
+						   	
+						
+							
+						   	<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 				            		<li><a href="/about/">About</a></li>
 				            		<li><a href="/about/resume/">Resume</a></li>
 				          		</ul>
-				       		</li> {% endif %}
-						{% endfor %}
+				       		</li>
+				       		
+						
+							
+						    <li >
+						       	<a href="/blog/" title="Blog">Blog</a>
+						   	</li>
+						   	
+						
+							
+						    <li >
+						       	<a href="/shows/" title="Shows">Shows</a>
+						   	</li>
+						   	
+						
 					</ul>
 				</div>
 			</div>
 		</nav>
+
+	<div class="title">
+		<h1 id="PageTitle">Home</h1>
+	</div>
+</div>
+</header>
+
+<div class="container" role="main" id="content">
+
+	<div class="jumbotron">
+  	<h1>Hello!</h1>
+  	<p>I'm a blogger, designer and engineer, but you can <a href="/about/">read more</a> about that elsewhere. However really I just have a passion for building things and sharing experiences.</p>
+</div>
+
+<hr>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-9 col-lg-10">
+					<p class="copy-center">Copyright &copy; 2015</p>
+				</div>
+				<div class="col-sm-12 col-md-3 col-lg-2 copy-center">
+					<ul class="social navbar-right">
+						<li><a href="http://www.github.com/LukeSheard" target="_blank"<i class="fa fa-github"></i></a></li>
+						<li><a href="http://www.linkedin.com/in/lukesheard" target="_blank"<i class="fa fa-linkedin"></i></a></li>
+						<li><a href="http://www.instagram.com/lsheard" target="_blank"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="http://www.twitter.com/SheardLuke" target="_blank"<i class="fa fa-twitter"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	</body>
+</html>
