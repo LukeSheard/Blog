@@ -31,7 +31,7 @@ function people(like){
       return "Please consider liking this!"
     } else if(like === 1){
       // return "Thankyou for liking this!";
-      returneturn like + " person likes this!"
+      return like + " person likes this!"
     } else{
       return like + " people like this!";
     }
