@@ -79,7 +79,7 @@ $(document).ready(function(){
             // });
 
             $.get(
-              "http://systems.lukesheard.com/editLikes.php"),
+              "http://systems.lukesheard.com/editLikes.php",
               {input: phpString },
               function(data){
                 console.log(data);
