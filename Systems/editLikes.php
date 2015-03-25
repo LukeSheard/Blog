@@ -1,23 +1,13 @@
 <?php
 header("Access-Control-Allow-Origin: http://www.lukesheard.com");
 
-$jsonString = file_get_contents('http://www.lukesheard.com/posts.json');
-$data = json_decode($jsonString, true);
+$jsonString = file_get_contents('posts.json');
+$data = json_decode($jsonString);
 
-function find($title)
-{
-    foreach($data as $item){
-    	if($item['Title'] == $title){
-    		return $item;
-    	}
-    }
-}
-
-// $current = find()
+$data[0]['Likes'] = "1";
 
 // $newJsonString = json_encode($data);
 // file_put_contents('http://www.lukesheard.com/posts.json', $newJsonString);
 
-// echo $data[0]['Likes']
-echo $_GET['input']
+echo $data[0]['Likes'];
 ?>
