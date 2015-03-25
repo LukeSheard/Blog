@@ -5,8 +5,7 @@ $jsonString = file_get_contents('posts.json');
 $data = json_decode($jsonString, true);
 $inputData = $_POST['input'];
 $length = sizeof($data);
-
-// echo $data[0]['Title'];
+$current = $data[find($data, $inputData, $length)]["Likes"];
 
 function find($array, $title, $total)
 {
@@ -20,12 +19,9 @@ function find($array, $title, $total)
 	return -1;
 }
 
-$index = find($data, $inputData, $length);
+$data[find($data, $inputData, $length)]["Likes"] = $current + 1;
 
-// $newJsonString = json_encode($data);
-// file_put_contents('http://www.lukesheard.com/posts.json', $newJsonString);
-
-echo $index;
-echo $data[$index]["Title"];
+$newJsonString = json_encode($data);
+file_put_contents('posts.json', $newJsonString);
 
 ?>

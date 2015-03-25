@@ -30,8 +30,7 @@ function people(like){
     if(like === 0){
       return "Please consider liking this!"
     } else if(like === 1){
-      return "Thankyou for liking this!";
-      // return like + " person likes this!"
+      return like + " person likes this!"
     } else{
       return like + " people like this!";
     }
@@ -40,9 +39,8 @@ function people(like){
 $(document).ready(function(){
   localStorage.clear();
   var title = document.getElementById("PageTitle").innerHTML;
-  console.log(title);
 
-  $.getJSON("/posts.json", function(data){
+  $.getJSON("http://system.lukesheard.com/posts.json", function(data){
     $.each(data, function(i){
       if(data[i].Title === title){
         var likes = data[i].Likes
@@ -69,13 +67,7 @@ $(document).ready(function(){
             $.ajax({
               type: "POST",
               url: "http://systems.lukesheard.com/editLikes.php",
-              data: {"input" : phpString},
-              success: function(data){
-                console.log(data);
-              },
-              error: function(jqXHR, textStatus, errorThrown) {
-                console.log(textStatus, errorThrown);
-              }
+              data: {"input" : phpString}
             });
           }
         };
