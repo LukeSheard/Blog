@@ -18,5 +18,6 @@ function find($title)
 // $newJsonString = json_encode($data);
 // file_put_contents('http://www.lukesheard.com/posts.json', $newJsonString);
 
-echo $data[0]['Likes']
+// echo $data[0]['Likes']
+echo $_GET['input']
 ?>

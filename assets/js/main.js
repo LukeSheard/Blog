@@ -65,18 +65,29 @@ $(document).ready(function(){
             localStorage.setItem(title, "liked");
             var phpString = String(title);
 
-            $.ajax({
-              type: "POST",
-              url: "http://systems.lukesheard.com/editLikes.php",
-              data: phpString,
-              datatype: jsonp,
+            // $.ajax({
+            //   type: "GET",
+            //   url: "http://systems.lukesheard.com/editLikes.php",
+            //   data: phpString,
+            //   datatype: jsonp,
+            //   success: function(data){
+            //     console.log(data);
+            //   },
+            //   error: function(jqXHR, textStatus, errorThrown) {
+            //     console.log(textStatus, errorThrown);
+            //   }
+            // });
+
+            $.get(
+              "http://systems.lukesheard.com/editLikes.php"),
+              {input: phpString },
               success: function(data){
                 console.log(data);
               },
               error: function(jqXHR, textStatus, errorThrown) {
                 console.log(textStatus, errorThrown);
               }
-            });
+            );
           }
         };
       }
