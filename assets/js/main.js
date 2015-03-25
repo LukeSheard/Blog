@@ -65,13 +65,17 @@ $(document).ready(function(){
             localStorage.setItem(title, "liked");
             var phpString = String(title);
 
-            $.post(
-              "http://systems.lukesheard.com/editLikes.php",
-              {input: phpString },
-              function(data){
+            $.ajax({
+              type: "POST",
+              url: "http://systems.lukesheard.com/editLikes.php",
+              data: phpString,
+              success: function(data){
                 console.log(data);
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
               }
-            );
+            });
           }
         };
       }
