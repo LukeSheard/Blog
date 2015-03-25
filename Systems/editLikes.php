@@ -3,25 +3,29 @@ header("Access-Control-Allow-Origin: http://www.lukesheard.com");
 
 $jsonString = file_get_contents('posts.json');
 $data = json_decode($jsonString, true);
+$inputData = $_POST['input'];
+$length = sizeof($data);
 
-$data[0]["Likes"] = 1;
+// echo $data[0]['Title'];
 
-// function find($title)
-// {
-//     foreach($data as $item){
-//     	if($item['Title'] == $title){
-//     		return $item;
-//     	}
-//     }
+function find($array, $title, $total)
+{
+    for ($x = 0; $x <= $total; $x++) {
+	    $y = strcmp($title, $array[$x]["Title"]);
+	    if ($y == 0) {
+	    	return $y;
+	    }
+	} 
 
-//     return $title;
-// }
+	return -1;
+}
 
-// $current = find($_GET['input']);
+$index = find($data, $inputData, $length);
 
 // $newJsonString = json_encode($data);
 // file_put_contents('http://www.lukesheard.com/posts.json', $newJsonString);
 
-echo $data[0]['Likes'];
-echo $_POST['input'];
+echo $index;
+echo $data[$index]["Title"];
+
 ?>

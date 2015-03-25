@@ -40,6 +40,7 @@ function people(like){
 $(document).ready(function(){
   localStorage.clear();
   var title = document.getElementById("PageTitle").innerHTML;
+  console.log(title);
 
   $.getJSON("/posts.json", function(data){
     $.each(data, function(i){
