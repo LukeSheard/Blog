@@ -31,14 +31,13 @@ function people(like){
       return "Please consider liking this!"
     } else if(like === 1){
       // return "Thankyou for liking this!";
-      return like + " person likes this!"
+      returneturn like + " person likes this!"
     } else{
       return like + " people like this!";
     }
   };
 
 $(document).ready(function(){
-  localStorage.clear();
   var title = document.getElementById("PageTitle").innerHTML;
 
   $.getJSON("/posts.json", function(data){
