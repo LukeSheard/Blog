@@ -28,9 +28,10 @@ var _gaq = _gaq || [];
 
 function people(like){
     if(like === 0){
-      return "Please consider liking this!";
+      return "Please consider liking this!"
     } else if(like === 1){
-      return like + " person likes this!";
+      // return "Thankyou for liking this!";
+      return like + " person likes this!"
     } else{
       return like + " people like this!";
     }
@@ -40,7 +41,7 @@ $(document).ready(function(){
   localStorage.clear();
   var title = document.getElementById("PageTitle").innerHTML;
 
-  $.getJSON("posts.json", function(data){
+  $.getJSON("/posts.json", function(data){
     $.each(data, function(i){
       if(data[i].Title === title){
         var likes = data[i].Likes
