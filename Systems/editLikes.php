@@ -23,5 +23,6 @@ $data[find($data, $inputData, $length)]["Likes"] = $current + 1;
 
 $newJsonString = json_encode($data);
 file_put_contents('posts.json', $newJsonString);
+file_put_contents('http://www.lukesheard.com/posts.json', $newJsonString);
 
 ?>

@@ -40,7 +40,7 @@ $(document).ready(function(){
   localStorage.clear();
   var title = document.getElementById("PageTitle").innerHTML;
 
-  $.getJSON("http://system.lukesheard.com/posts.json", function(data){
+  $.getJSON("posts.json", function(data){
     $.each(data, function(i){
       if(data[i].Title === title){
         var likes = data[i].Likes
