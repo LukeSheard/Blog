@@ -68,7 +68,7 @@ $(document).ready(function(){
             $.ajax({
               type: "POST",
               url: "http://systems.lukesheard.com/editLikes.php",
-              data: phpString,
+              data: {"input" : phpString},
               success: function(data){
                 console.log(data);
               },
