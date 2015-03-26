@@ -20,6 +20,7 @@
 
 {% if {{page.categories}} == nil %}	
 <div class="container">	
+
 	<div class="row">
 	 	<div class="col-xs-12 cod-sm-12 col-md-9">
 			<div id="content" role="main">
@@ -46,14 +47,7 @@
 		{{ content }}
 	</div>
 
-			
-	<div class="container post-info">
-		<div class="likes">
-			<p id="total">people like this</p>
-			<span id="heart" class="likeme glyphicon glyphicon-heart-empty"></span>
-		</div>
-	</div>
-
+		
 	<div class="container box">
 		{% for post in site.posts %}
 	        {% if post.url == page.url %}

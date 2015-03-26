@@ -30,50 +30,14 @@ function people(like){
     if(like === 0){
       return "Please consider liking this!"
     } else if(like === 1){
-      // return "Thankyou for liking this!";
-      return like + " person likes this!"
+      return "Thankyou for liking this!";
+      // return like + " person likes this!"
     } else{
       return like + " people like this!";
     }
   };
 
-$(document).ready(function(){
-  var title = document.getElementById("PageTitle").innerHTML;
-
-  $.getJSON("/posts.json", function(data){
-    $.each(data, function(i){
-      if(data[i].Title === title){
-        var likes = data[i].Likes
-
-        var heart = document.getElementById("heart");
-        var total = document.getElementById("total");
-        total.innerHTML = people(likes)
-
-
-        if(localStorage.getItem(title) === "liked"){
-          heart.className = "liked glyphicon glyphicon-heart";
-          total.innerHTML = "Thankyou for liking this!"
-        }
-
-        heart.onclick = function(){
-          if (heart.className == "likeme glyphicon glyphicon-heart-empty") {
-            heart.className = "liked glyphicon glyphicon-heart";
-            data[i].Likes = likes + 1;
-            total.innerHTML = people(data[i].Likes);
-            
-            localStorage.setItem(title, "liked");
-            var phpString = String(title);
-
-            $.ajax({
-              type: "POST",
-              url: "http://systems.lukesheard.com/editLikes.php",
-              data: {"input" : phpString}
-            });
-          }
-        };
-      }
-    })  
-  }) 
+$(document).ready(function(){}
 
   if(title === "Resume"){
     var $ul = $('.skills')
