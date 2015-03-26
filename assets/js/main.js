@@ -37,9 +37,11 @@ function people(like){
     }
   };
 
-$(document).ready(function(){}
+$(document).ready(function(){
 
-  if(title === "Resume"){
+  var title = document.getElementById("PageTitle").innerHTML;
+
+  if (title === "Resume") {
     var $ul = $('.skills')
           var $liArr = $ul.children('li');
           
