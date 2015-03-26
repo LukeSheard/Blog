@@ -8,13 +8,13 @@ layout: home
 		if(color == 'visit'){
 			return 'red';
 		}
-		if(color == 'location'){
+		if(color == 'berkeley'){
 			return 'green';
 		}
 		if(color == 'food'){
 			return 'blue';
 		}
-		if(color == 'airport')
+		if(color == 'destination')
 		{
 			return 'yellow';
 		}
@@ -27,51 +27,61 @@ layout: home
 	  	var map;
 	    var bounds = new google.maps.LatLngBounds();
 	    var mapOptions = {
-	        mapTypeId: 'roadmap'
+	        mapTypeId: 'roadmap',
+	        disableDefaultUI: true,
+	        zoomControl: true,
 	    };
 
 	  	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
 	  	// Multiple Markers
 	    var markers = [
-	        ['San Francisco International', 37.615031, -122.382391, 'airport'],
-	        ['JFK International', 40.6397, -73.7789, 'airport'],
-	        ['Newark Airport', 40.6925, -74.1686, 'airport'],
-	        ['Seattle Tacoma Airport', 47.45025, -122.308816, 'airport'],
-	        ['Calgary Airport', 51.1225, -114.0133, 'airport'],
-	        ['Sacramento Airport', 38.6956, -121.5908, 'airport'],
-	        ['Salt Lake City Airport', 40.7883, -111.9778, 'airport'],
+	        ['San Francisco International', 37.615031, -122.382391, 'destination'],
+	        ['Sacramento Airport', 38.6956, -121.5908, 'destination'],
 
-	        ['Foothill', 37.875243, -122.255173, 'location'],
+	        ['Foothill', 37.875243, -122.255173, 'berkeley'],
 
 	        //Thanksgiving & Christmas 
 	        ['UC Davis',  38.538232 , -121.761712, 'break'],
+	        ['Maris Home',  38.665833, -120.926111, 'break'],
 	        ['Sierra at Tahoe', 38.800469, -120.080243, 'break'],
 	        ['Coloma', 38.799921, -120.890292, 'break'], 
 
 	        //New York
+	        // ['JFK International', 40.6397, -73.7789, 'destination'],
+	        // ['Newark Airport', 40.6925, -74.1686, 'destination'],
 
 	        //London Adventure
 
 	        //Frisbee
+	        ['San Jose State', 37.320277, -121.866639, 'destination'],
+	        ['Santa Clara State', 37.349642, -121.938988, 'destination'],
 
 	        // Point Reyes Day Out
 	        ['Point Reyes Lighthouse', 37.996513, -123.020489, 'visit'],
 	        ['Drake Beach', 38.027540, -122.961773, 'visit'],
 	        ['Inverness', 38.096859, -122.851835, 'visit'],
+	        ['Hawk Hill', 37.827557, -122.499533, 'visit'],
 
 	        //Canada
-	        // ['Downtown Calgary', , 'travel'],
-	        // ['Royal Board Shop', , 'travel'],
-	        // ['Saddledome', , 'travel'],
-	        // ['Park', , 'travel'], 
-	        ['Lake Louise', 51.412189, -116.228614, 'break'], 
-	        ['Lake Johnson', 51.196477, -115.483003 , 'break'], 
-	        ['Banff', 51.181307, -115.572095, 'break'],
-	        ['Bow Falls', 51.167921, -115.561495, 'break'],
+	        // ['Seattle Tacoma Airport', 47.45025, -122.308816, 'destination'],
+	        // ['Calgary Airport', 51.1225, -114.0133, 'destination'],
+	        // ['Salt Lake City Airport', 40.7883, -111.9778, 'destination'],
+
+	        // ['Downtown Calgary', 51.046925, -114.077697, 'break'],
+	        // ['Royal Board Shop',  51.058935, -114.054054, 'break'],
+	        // ['Saddledome', 51.037434, -114.051934, 'break'],
+	        // ['Princes Island Park',  51.055437, -114.070401, 'break'], 
+	        // ['SAIT Polytechnic', 51.064135, -114.096065, 'break'],
+	        // ['Lake Louise', 51.412189, -116.228614, 'break'], 
+	        // ['Lake Johnson', 51.196477, -115.483003 , 'break'], 
+	        // ['Banff', 51.181307, -115.572095, 'break'],
+	        // ['Bow Falls', 51.167921, -115.561495, 'break'],
 
 	        //Other
 	        ['Diamon Peak', 39.25379, -119.923772, 'visit'],
+	        ['YouTube', 37.628152, -122.426454, 'visit'],
+	        ['Half Moon Bay', 37.499649, -122.468719, 'visit'],
 
 	    ];
 	    
@@ -122,7 +132,7 @@ layout: home
 	    }
 
 	    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-	        this.setZoom(5);
+	        this.setZoom(8);
 	        google.maps.event.removeListener(boundsListener);
 	    });
 	    
