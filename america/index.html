@@ -4,6 +4,8 @@ layout: home
 ---
 
 <script>
+	var map;
+
 	function iconType(color){
 		if(color == 'visit'){
 			return 'red';
@@ -24,12 +26,14 @@ layout: home
 	}
 
 	function initialize() {
-	  	var map;
 	    var bounds = new google.maps.LatLngBounds();
 	    var mapOptions = {
 	        mapTypeId: 'roadmap',
 	        disableDefaultUI: true,
-	        zoomControl: true,
+	        zoomControl: false,
+	        draggable: false,
+	        disableDoubleClickZoom: true,
+	        scrollwheel: false
 	    };
 
 	  	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -141,4 +145,37 @@ layout: home
 	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
-<div id="map-canvas" style="height: 85vh; margin: 0px; padding: 0px"></div>
+<div id="controls">
+
+<h3>Map of Places</h3>
+
+<p>Inspired by Maris, I thought it would be a good idea to see if I could plot a google map of the different places I've visited on my year abroad. This is the beginning, with California. Soon I'll add New York (from winter break) and Canada (from spring break).</p>
+
+<div class="text-center">
+	<div class="btn-group center" role="group" >
+	  <button type="button" class="btn btn-primary" onclick="initialize()">Reset Map</button>
+	  <button type="button" class="btn btn-primary" onclick="california">California</button>
+	  <button type="button" class="btn btn-primary" onclick="newYork">New York</button>
+	  <button type="button" class="btn btn-primary" onclick="canada">Canada</button>
+	</div>
+</div>
+
+</div>
+<div id="map-canvas" style="height: 75vh; margin: 0px; padding: 0px"></div>
+
+<hr>
+
+<div class="blog-loop">
+	<div class="row">
+		{% for post in site.posts %}
+			{% if post.tags[0] == 'America' %}
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 post" style="background-image: url('/images/headers/posts/{{post.title}}.jpg'); background-repeat: no-repeat;" onclick="location.href='{{post.url}}';">
+					<div class="post-title">
+						<h3>{{post.title}}</h3>
+						<h6>{{post.date | date: "%B %-d, %Y"}}</h6>
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
