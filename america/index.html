@@ -4,7 +4,9 @@ layout: home
 ---
 
 <script>
+	var bounds;
 	var map;
+	var marks = []
 
 	function iconType(color){
 		if(color == 'visit'){
@@ -25,8 +27,97 @@ layout: home
 		}
 	}
 
-	function initialize() {
-	    var bounds = new google.maps.LatLngBounds();
+	// Multiple Markers
+	    var markers = [
+	    	//Arrival
+	        ['San Francisco International', 37.615031, -122.382391, 'destination', 'California'],
+	        ['Orinda',  37.887589, -122.206764 , 'visit', 'California'], 
+	        ['Napa',  38.427432, -122.39433, 'visit', 'California'], 
+	        ['Halfmoon Bay', 37.463552, -122.428586 , 'visit', 'California'],
+
+	        ['Foothill', 37.875243, -122.255173, 'berkeley', 'California'],
+
+	        //Thanksgiving & Christmas 
+	        ['UC Davis',  38.538232 , -121.761712, 'break', 'California'],
+	        ['Maris Home',  38.665833, -120.926111, 'break', 'California'],
+	        ['Sierra at Tahoe', 38.800469, -120.080243, 'break', 'California'],
+	        ['Coloma', 38.799921, -120.890292, 'break', 'California'], 
+			['Sacramento Airport', 38.6956, -121.5908, 'destination', 'California'],
+
+	        //New York
+	        ['JFK International', 40.6397, -73.7789, 'destination', 'New York'],
+	        // ['Hotel'],
+	        // ['Times Square'],
+	        // ['Central Park'],
+	        // ['New Year Spot'],
+	        // ['Empire State Building'],
+	        // ['Highline'],
+	        // ['9/11 Memorial'],
+	        // ['Statten Island Ferry Terminal'],
+
+	        ['Newark Airport', 40.6925, -74.1686, 'destination', 'New York'],
+
+	        //London Adventure
+
+	        //Frisbee
+	        ['San Jose State', 37.320277, -121.866639, 'destination', 'California'],
+	        ['Santa Clara State', 37.349642, -121.938988, 'destination', 'California'],
+
+	        // Point Reyes Day Out
+	        ['Point Reyes Lighthouse', 37.996513, -123.020489, 'visit', 'California'],
+	        ['Drake Beach', 38.027540, -122.961773, 'visit', 'California'],
+	        ['Inverness', 38.096859, -122.851835, 'visit', 'California'],
+	        ['Hawk Hill', 37.827557, -122.499533, 'visit', 'California'],
+
+	        //Spring Break
+	        //Canada
+	        ['Seattle Tacoma Airport', 47.45025, -122.308816, 'destination'],
+	        ['Salt Lake City Airport', 40.7883, -111.9778, 'destination'],
+
+	        ['Calgary Airport', 51.1225, -114.0133, 'destination', 'Canada'],
+	        ['Downtown Calgary', 51.046925, -114.077697, 'break', 'Canada'],
+	        ['Royal Board Shop',  51.058935, -114.054054, 'break', 'Canada'],
+	        ['Saddledome', 51.037434, -114.051934, 'break', 'Canada'],
+	        ['Princes Island Park',  51.055437, -114.070401, 'break', 'Canada'], 
+	        ['SAIT Polytechnic', 51.064135, -114.096065, 'break', 'Canada'],
+	        ['Lake Louise', 51.412189, -116.228614, 'break', 'Canada'], 
+	        ['Lake Johnson', 51.196477, -115.483003 , 'break', 'Canada'], 
+	        ['Banff', 51.181307, -115.572095, 'break', 'Canada'],
+	        ['Bow Falls', 51.167921, -115.561495, 'break', 'Canada'],
+
+	        //Tahoe
+	        ['Squaw Valley Ski', 39.196299, -120.235446, 'break', 'California'],
+
+	        //Yosemite
+	        ['Yosemite Valley', 37.74557, -119.593604, 'break', 'California'],
+	        ['Yosemite AirBnB', 37.469068, -119.73424, 'break', 'California'],
+	        ['A walk among the giants', 37.43994, -119.587648, 'break', 'California'],
+	        ['Liana Overnight Stop',  37.639097, -120.996878, 'break', 'California'],
+
+	        //Other
+	        ['Diamon Peak', 39.25379, -119.923772, 'visit', 'California'],
+	        ['YouTube', 37.628152, -122.426454, 'visit', 'California'],
+
+	    ];
+
+	function open(){
+		initialize(null);
+	}
+
+	function california(){
+		initialize("California");
+	}
+
+	function Canda(){
+		initialize("Canada");
+	}
+
+	function newYork(){
+		initialize("New York");
+	}
+
+	function initialize(pins) {
+	    bounds = new google.maps.LatLngBounds();
 	    var mapOptions = {
 	        mapTypeId: 'roadmap',
 	        disableDefaultUI: true,
@@ -36,113 +127,71 @@ layout: home
 	        scrollwheel: false
 	    };
 
-	  	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-	  	// Multiple Markers
-	    var markers = [
-	        ['San Francisco International', 37.615031, -122.382391, 'destination'],
-	        ['Sacramento Airport', 38.6956, -121.5908, 'destination'],
-
-	        ['Foothill', 37.875243, -122.255173, 'berkeley'],
-
-	        //Thanksgiving & Christmas 
-	        ['UC Davis',  38.538232 , -121.761712, 'break'],
-	        ['Maris Home',  38.665833, -120.926111, 'break'],
-	        ['Sierra at Tahoe', 38.800469, -120.080243, 'break'],
-	        ['Coloma', 38.799921, -120.890292, 'break'], 
-
-	        //New York
-	        // ['JFK International', 40.6397, -73.7789, 'destination'],
-	        // ['Newark Airport', 40.6925, -74.1686, 'destination'],
-
-	        //London Adventure
-
-	        //Frisbee
-	        ['San Jose State', 37.320277, -121.866639, 'destination'],
-	        ['Santa Clara State', 37.349642, -121.938988, 'destination'],
-
-	        // Point Reyes Day Out
-	        ['Point Reyes Lighthouse', 37.996513, -123.020489, 'visit'],
-	        ['Drake Beach', 38.027540, -122.961773, 'visit'],
-	        ['Inverness', 38.096859, -122.851835, 'visit'],
-	        ['Hawk Hill', 37.827557, -122.499533, 'visit'],
-
-	        //Canada
-	        // ['Seattle Tacoma Airport', 47.45025, -122.308816, 'destination'],
-	        // ['Calgary Airport', 51.1225, -114.0133, 'destination'],
-	        // ['Salt Lake City Airport', 40.7883, -111.9778, 'destination'],
-
-	        // ['Downtown Calgary', 51.046925, -114.077697, 'break'],
-	        // ['Royal Board Shop',  51.058935, -114.054054, 'break'],
-	        // ['Saddledome', 51.037434, -114.051934, 'break'],
-	        // ['Princes Island Park',  51.055437, -114.070401, 'break'], 
-	        // ['SAIT Polytechnic', 51.064135, -114.096065, 'break'],
-	        // ['Lake Louise', 51.412189, -116.228614, 'break'], 
-	        // ['Lake Johnson', 51.196477, -115.483003 , 'break'], 
-	        // ['Banff', 51.181307, -115.572095, 'break'],
-	        // ['Bow Falls', 51.167921, -115.561495, 'break'],
-
-	        //Other
-	        ['Diamon Peak', 39.25379, -119.923772, 'visit'],
-	        ['YouTube', 37.628152, -122.426454, 'visit'],
-	        ['Half Moon Bay', 37.499649, -122.468719, 'visit'],
-
-	    ];
+	  	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 	    
 	    // Loop through our array of markers & place each one on the map  
 	    for( i = 0; i < markers.length; i++ ) {
-	        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+	    	if(pins == null || markers[i][4] == pins){
+		        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
 
-	        bounds.extend(position);
-	        
-	        var marker = new google.maps.Marker({
-	            map: map,
+		        bounds.extend(position);
+		        
+		        var marker = new google.maps.Marker({
+		            map: map,
 
-	            animation: google.maps.Animation.DROP,
-	            
-	            title: markers[i][0],
-	            position: position,
-	        });
+		            animation: google.maps.Animation.DROP,
+		            
+		            title: markers[i][0],
+		            position: position,
+		        });
 
-	        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/' + iconType(markers[i][3]) + '-dot.png')
+		        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/' + iconType(markers[i][3]) + '-dot.png')
 
-	        var info = new google.maps.InfoWindow({
-			    content: markers[i][0]
-			});
-	        
-	        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-		        return function() {
-		          map.setZoom(8);
-			    map.setCenter(marker.getPosition());
+		        var info = new google.maps.InfoWindow({
+				    content: markers[i][0]
+				});
+		        
+		        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+			        return function() {
+			          map.setZoom(8);
+				    	map.setCenter(marker.getPosition());
+			        }
+		      	})(marker, i));
+
+				var infowindow = new google.maps.InfoWindow();
+				google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+			        return function() {
+			          infowindow.setContent(markers[i][0]);
+			          infowindow.open(map, marker);
+			        }
+		      	})(marker, i));
+
+				// assuming you also want to hide the infowindow when user mouses-out
+				google.maps.event.addListener(marker, 'mouseout', (function(marker, i) {
+			        return function() {
+			          infowindow.close();
+			        }
+		      	})(marker, i));
+
+		        map.fitBounds(bounds);
+
+		        marks.push(marker);
+		    }
+
+		    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+		        if(pins == null){
+		        	this.setZoom(4);
+		        } else if(pins === "California" || pins === "Canada") {
+		        	this.setZoom(7);
+		        } else {
+		        	this.setZoom(8)
 		        }
-	      	})(marker, i));
-
-			var infowindow = new google.maps.InfoWindow();
-			google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
-		        return function() {
-		          infowindow.setContent(markers[i][0]);
-		          infowindow.open(map, marker);
-		        }
-	      	})(marker, i));
-
-			// assuming you also want to hide the infowindow when user mouses-out
-			google.maps.event.addListener(marker, 'mouseout', (function(marker, i) {
-		        return function() {
-		          infowindow.close();
-		        }
-	      	})(marker, i));
-
-	        map.fitBounds(bounds);
-	    }
-
-	    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-	        this.setZoom(8);
-	        google.maps.event.removeListener(boundsListener);
-	    });
-	    
+		        google.maps.event.removeListener(boundsListener);
+		    });
+		}
 	}
 
-	google.maps.event.addDomListener(window, 'load', initialize);
+	google.maps.event.addDomListener(window, 'load', open );
 </script>
 
 <div id="controls">
@@ -153,10 +202,10 @@ layout: home
 
 <div class="text-center">
 	<div class="btn-group center" role="group" >
-	  <button type="button" class="btn btn-primary" onclick="initialize()">Reset Map</button>
-	  <button type="button" class="btn btn-primary" onclick="california">California</button>
-	  <button type="button" class="btn btn-primary" onclick="newYork">New York</button>
-	  <button type="button" class="btn btn-primary" onclick="canada">Canada</button>
+	  <button type="button" class="btn btn-primary" onclick="initialize();">Reset Map</button>
+	  <button type="button" class="btn btn-primary" onclick="california();">California</button>
+	  <button type="button" class="btn btn-primary" onclick="newYork();">New York</button>
+	  <button type="button" class="btn btn-primary" onclick="Canda();">Canada</button>
 	</div>
 </div>
 
