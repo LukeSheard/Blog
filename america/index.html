@@ -46,7 +46,8 @@ layout: home
 
 	        //New York
 	        ['JFK International', 40.6397, -73.7789, 'destination', 'New York'],
-	        // ['Hotel'],
+	        ['Hotel', 40.753182, -73.98551, 'break', 'New York'],
+	        ['Public Library', 40.753239, -73.982182, 'break', 'New York'],
 	        // ['Times Square'],
 	        // ['Central Park'],
 	        // ['New Year Spot'],
@@ -56,8 +57,6 @@ layout: home
 	        // ['Statten Island Ferry Terminal'],
 
 	        ['Newark Airport', 40.6925, -74.1686, 'destination', 'New York'],
-
-	        //London Adventure
 
 	        //Frisbee
 	        ['San Jose State', 37.320277, -121.866639, 'destination', 'California'],
@@ -181,10 +180,12 @@ layout: home
 		    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
 		        if(pins == null){
 		        	this.setZoom(4);
-		        } else if(pins === "California" || pins === "Canada") {
-		        	this.setZoom(7);
+		        } else if(pins === "California"){
+		        	this.setZoom(8);
+		        } else if(pins === "Canada") {
+		        	this.zoom(10);
 		        } else {
-		        	this.setZoom(8)
+		        	this.setZoom(11)
 		        }
 		        google.maps.event.removeListener(boundsListener);
 		    });
@@ -216,15 +217,17 @@ layout: home
 
 <div class="blog-loop">
 	<div class="row">
-		{% for post in site.posts %}
-			{% if post.tags[0] == 'America' %}
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 post" style="background-image: url('/images/headers/posts/{{post.title}}.jpg'); background-repeat: no-repeat;" onclick="location.href='{{post.url}}';">
-					<div class="post-title">
-						<h3>{{post.title}}</h3>
-						<h6>{{post.date | date: "%B %-d, %Y"}}</h6>
+		{% for post in site.posts | limit : 3 %}
+			{% for tag in post.tags %}
+				{% if tag == 'America' %}
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 post" style="background-image: url('/images/headers/posts/{{post.title}}.jpg'); background-repeat: no-repeat;" onclick="location.href='{{post.url}}';">
+						<div class="post-title">
+							<h3>{{post.title}}</h3>
+							<h6>{{post.date | date: "%B %-d, %Y"}}</h6>
+						</div>
 					</div>
-				</div>
-			{% endif %}
+				{% endif %}
+			{% endfor %}
 		{% endfor %}
 	</div>
 </div>
