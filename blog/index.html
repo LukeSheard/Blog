@@ -17,47 +17,25 @@ layout: blog
 </div>
 
 <!-- Pagination links -->
+
+{{paginator.page}}
+
 {% if paginator.total_pages > 1 %}
-<div class="pagination">
-  <ul>
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == 1 %}
-      <li
-        {%if page == paginator.page %}
-          class="active"
+<div class="text-center">
+    <ul class="pagination">
+      <li><a href="{{ paginator.previous_page_path }}">&laquo;</a></li>
+      {% for item in (1..paginator.total_pages) %}
+        {% if item == 1 %}
+            <li {% if paginator.page == item %} class="active" {% endif %}>
+              <a href="{{ '/blog/' | prepend: site.baseurl | replace: '//', '/' }}">{{item}}</a>
+            </li>
         {% else %}
-          class="inactive"
-          onclick="location.href='{{ "/blog/" | prepend: site.baseurl | replace: '//', '/' }}';"
-        {% endif %} >
-        <p>
-          {%if page == paginator.page %}
-            <strong>
-          {% endif %}
-          {{ page }}
-          {%if page == paginator.page %}
-            </strong>
-          {% endif %}
-        </p>
-      </li>
-    {% else %}
-      <li {%if page == paginator.page %}
-          class="active"
-        {% else %}
-          class="inactive"
-          onclick="location.href='{{site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}';"
-        {% endif %} >
-       <p>
-         {%if page == paginator.page %}
-            <strong>
-          {% endif %}
-          {{ page }}
-          {%if page == paginator.page %}
-            </strong>
-          {% endif %}
-        </p>
-      </li>
-    {% endif %}
-  {% endfor %}
-  </ul>
+          <li {% if paginator.page == item %} class="active" {% endif %}>
+            <a href="{{site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', item }}">{{item}}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+      <li><a href="{{ paginator.next_page_path }}">&raquo;</a></li>
+    </ul>
 </div>
 {% endif %}

@@ -262,42 +262,6 @@ hr {
 	text-decoration: none;
 }
 
-.pagination{
-	margin-left: auto;
-	margin-right: auto;
-    width: 100%;
-}
-
-.pagination ul{
-	margin: 0;
-	padding: 0;
-	list-style: disc inside; 
-	list-style-type: disc;
-	text-align: center; 
-}
-
-.pagination li{
-	margin-left: 5px;
-	margin-right: 5px;
-	display: inline-block;
-	border-color: #3f3f3f;
-	border-style: solid;
-	border-width: 1px;
-	min-width: 2em;
-}
-
-.pagination li.inactive:hover{
-	-webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    border-width: 1px;
-	color: #0000ff;
-	border-color: #0000ff;
-}
-
-.pagination li.active{
-	color: #fff;
-	background-color: #000;
-}
 .copy-center{
 	margin-left: auto;
 	margin-left: auto;
