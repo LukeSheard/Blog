@@ -126,7 +126,7 @@ layout: home
 	        scrollwheel: false
 	    };
 
-	  	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+	  	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 	    
 	    // Loop through our array of markers & place each one on the map  
 	    for( i = 0; i < markers.length; i++ ) {
@@ -152,7 +152,7 @@ layout: home
 		        
 		        google.maps.event.addListener(marker, 'click', (function(marker, i) {
 			        return function() {
-			          map.setZoom(8);
+			          map.setZoom(15);
 				    	map.setCenter(marker.getPosition());
 			        }
 		      	})(marker, i));

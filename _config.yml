@@ -19,14 +19,16 @@ highlighter: pygments
 
 navigation:
 - text: Home
+  type: link
   url: /
-  ref: /index.html
 - text: About
+  type: dropdown
+  pages: [Resume]
   url: /about/
-  ref: /about/index.html
 - text: Blog
+  type: dropdown
+  pages: [America]
   url: /blog/
-  ref: /blog/index.html
-- text: Shows
-  url: /shows/
-  ref: /shows/index.html
+# - text: Shows
+#   type: link
+#   url: /shows/

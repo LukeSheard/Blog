@@ -55,11 +55,9 @@ $(document).ready(function(){
   } 
 });
 
-
-
 $(window).load(function(){
   var now = new Date();
-  now = now.getTime()
+  now = now.getTime();
 
   if(Date.parse(localStorage.date) !== null){
     var date = Date.parse(localStorage.date);
