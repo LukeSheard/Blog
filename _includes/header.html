@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link href="/assets/css/bootstrap.css" rel="stylesheet">
 	<link href="/assets/css/main.css" rel="stylesheet">
+	
 
 	
 
@@ -70,17 +71,17 @@
 
 				<!-- NavBar Links -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				  	<ul class="nav navbar-nav navbar-right">
+				  	<ul class="nav navbar-nav navbar-right" id="navbar">
 						{% for link in site.navigation %}
 							{% if {{link.type}} == "link" %}
-								<li>
-						       		<a href="{{link.url}}" title="{{link.text}}">{{link.text}}</a>
+								<li id="link">
+						       		<a id="{{link.text}}" href="{{link.url}}">{{link.text}}</a>
 						       	</li>
 						   	{% elsif {{link.type}} == "dropdown" %}
-								<li class="dropdown" >
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{link.text}} <span class="caret"></span></a>
+								<li id="dropdown" class="dropdown">
+									<a id="{{link.text}}" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{link.text}} <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="{{link.url}}">{{link.text}}</a></li>
+										<li id="{{link.text}}"><a href="{{link.url}}">{{link.text}}</a></li>
 					            		{% for item in link.pages %}
 											<li><a href="{{link.url}}{{item}}">{{item}}</a></li>
 					            		{% endfor %}

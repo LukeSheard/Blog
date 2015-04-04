@@ -38,9 +38,29 @@ function people(like){
   };
 
 $(document).ready(function(){
+  var path = window.location.pathname;
+  if( path == "/"){
+    path = "home";
+  } else {
+    path = path.split( '/' );
+    path = path[1]
+  }
+
+  $("#navbar").children('li').each(function () {
+    var navItem =$(this)
+    navItem.children("a").each(function(){
+      var $href = $(this);
+      var href = $href.attr('id').toLowerCase();
+      
+      console.log(href)
+
+      if(href == path){
+        navItem.children('a').addClass("activeItem");
+      }
+    })
+  });
 
   var title = document.getElementById("PageTitle").innerHTML;
-
   if (title === "Resume") {
     var $ul = $('.skills')
           var $liArr = $ul.children('li');
