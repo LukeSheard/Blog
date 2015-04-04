@@ -82,6 +82,7 @@ footer{
 	width: 100%;
 	bottom: 0;
 	min-height: 65px;
+	max-height: 100px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }	
@@ -90,16 +91,27 @@ footer a:hover, a:focus{
   text-decoration: underline;
 }
 
+.copy-center{
+	margin-left: auto;
+	margin-left: auto;
+}
+
+@media (max-width: 774px){
+	.copy-center{
+		text-align: center;
+	}
+}
+
 .social{
 	right: 0;
-	display: inline;
+	display: block;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	text-align: center;
 }
 
-.social > s{
+.social> li:first-child{
 	padding-left: 5px;
 	display: inline;
 }
@@ -115,6 +127,23 @@ footer a:hover, a:focus{
 
 .social > li > a{
 	text-decoration: none;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2em;
+    right: 30px;
+    text-decoration: none;
+    color: #000000;
+    background-color: rgba(235, 235, 235, 0.80);
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+}
+
+.back-to-top:hover {    
+    background-color: rgba(135, 135, 135, 0.50);
 }
 
 /* HOME PAGE STUFF */
@@ -246,17 +275,6 @@ hr {
 .post-title > h3 > a{
 	font-weight: 300;
 	text-decoration: none;
-}
-
-.copy-center{
-	margin-left: auto;
-	margin-left: auto;
-}
-
-@media (max-width: 992px){
-	.copy-center{
-		text-align: center;
-	}
 }
 
 /*POST STUFF*/

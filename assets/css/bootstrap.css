@@ -269,6 +269,8 @@ th {
         url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
+  font-size: 1.2em;
+  color: #fff;
   position: relative;
   top: 1px;
   display: inline-block;
