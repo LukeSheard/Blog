@@ -11,29 +11,7 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link href="/assets/css/bootstrap.css" rel="stylesheet">
 	<link href="/assets/css/main.css" rel="stylesheet">
-
-	<script src='/assets/nprogress.js'></script>
 	<link rel='stylesheet' href='/assets/nprogress.css'/>
-
-	<!-- HEADER IMAGES -->
-  	<style type="text/css">
-	  	#header{
-	  		{% if page.layout == 'post' %}
-			background-image: url("/images/headers/posts/{{page.title}}.jpg");
-			{% elsif page.layout == "gallery" %}
-			background-image: url("/images/headers/posts/{{page.title}}.jpg");
-			{% elsif page.layout == "show" %}
-			background-image: url("/images/headers/shows/{{page.title}}.jpg");
-			{% else  %}
-			background-image: url("/images/headers/pages/{{page.title}}.jpg");
-			{% endif %}
-
-			{% if page.layout == "blog" %}
-			padding-bottom: 0;
-			margin-bottom: 0;
-			{% endif %}
-	  	}
-  	</style>
 </head>
 
 <body>

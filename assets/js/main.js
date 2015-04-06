@@ -39,12 +39,13 @@ function people(like){
 
 $(document).ready(function(){
   var title = document.getElementById("PageTitle").innerHTML;
-
-  var path = window.location.pathname;
+  var pathname = window.location.pathname;
+  path = pathname.toLowerCase();
+  
   if( path == "/"){
     path = "home";
   } else {
-    path = path.split( '/' );
+    path = pathname.split( '/' );
     path = path[1]
   }
 
@@ -66,6 +67,18 @@ $(document).ready(function(){
     });
   });
 
+  if(path === "blog"){
+    var headImage = "url('/images/headers/posts/" + title + ".jpg')";
+  } else {
+    var headImage = "url('/images/headers/pages/" + title + ".jpg')";
+  }
+  $("header").css("background-image", headImage);
+
+  if(title === "Blog"){
+    $("#header").css("padding-bottom", 0);
+    $("#header").css("margin-bottom", 0)
+  };
+
   if(title === "America"){
     initialize();
   }
@@ -82,22 +95,6 @@ $(document).ready(function(){
           })
           .appendTo($ul);
   } 
-
-  var offset = 400;
-  var duration = 500;
-  $(window).scroll(function() {
-      if ($(this).scrollTop() > offset) {
-        $('.back-to-top').fadeIn(duration);
-      } else {
-          $('.back-to-top').fadeOut(duration);
-      }
-  });
-  
-  $('.back-to-top').click(function(event) {
-      event.preventDefault();
-      $('html, body').animate({scrollTop: 0}, 2* duration);
-      return false;
-  })
 });
 
 $(window).load(function(){
@@ -118,3 +115,18 @@ $(window).load(function(){
   
   localStorage.date = new Date();
 });
+
+var offset = 400;
+var duration = 500;
+$(window).scroll(function() {
+    if ($(this).scrollTop() > offset) {
+      $('.back-to-top').fadeIn(duration);
+    } else {
+        $('.back-to-top').fadeOut(duration);
+    }
+});
+$('.back-to-top').click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop: 0}, 2* duration);
+    return false;
+})
