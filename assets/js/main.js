@@ -49,13 +49,19 @@ $(document).ready(function(){
   $("#navbar").children('li').each(function () {
     var navItem =$(this)
     navItem.children("a").each(function(){
-      var $href = $(this);
-      var href = $href.attr('id').toLowerCase();
-
-      if(href == path){
+      var $item = $(this);
+      var id = $item.attr('id').toLowerCase();
+      if(id == path){
         navItem.children('a').addClass("activeItem");
       }
     })
+
+    $('a').each(function(){
+      var href = $(this).attr('href');
+      href = href.toLowerCase()
+      $(this).attr('href', href);
+      
+    });
   });
 
   var title = document.getElementById("PageTitle").innerHTML;
