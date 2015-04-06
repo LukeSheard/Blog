@@ -38,7 +38,7 @@ function people(like){
   };
 
 $(document).ready(function(){
-  initialize();
+  var title = document.getElementById("PageTitle").innerHTML;
 
   var path = window.location.pathname;
   if( path == "/"){
@@ -66,7 +66,10 @@ $(document).ready(function(){
     });
   });
 
-  var title = document.getElementById("PageTitle").innerHTML;
+  if(title === "America"){
+    initialize();
+  }
+  
   if (title === "Resume") {
     var $ul = $('.skills')
           var $liArr = $ul.children('li');
@@ -98,6 +101,7 @@ $(document).ready(function(){
 });
 
 $(window).load(function(){
+
   var now = new Date();
   now = now.getTime();
 
