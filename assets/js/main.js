@@ -38,6 +38,8 @@ function people(like){
   };
 
 $(document).ready(function(){
+  initialize();
+
   var path = window.location.pathname;
   if( path == "/"){
     path = "home";
