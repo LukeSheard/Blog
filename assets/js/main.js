@@ -46,15 +46,15 @@ $(document).ready(function(){
     path = "home";
   } else {
     path = pathname.split( '/' );
-    path = path[1]
   }
+  console.log(path[2])
 
   $("#navbar").children('li').each(function () {
     var navItem =$(this)
     navItem.children("a").each(function(){
       var $item = $(this);
       var id = $item.attr('id').toLowerCase();
-      if(id == path){
+      if(id == path[1]){
         navItem.children('a').addClass("activeItem");
       }
     })
@@ -67,7 +67,7 @@ $(document).ready(function(){
     });
   });
 
-  if(path === "blog"){
+  if(path[1] === "blog" && path[2] != ""){
     var headImage = "url('/images/headers/posts/" + title + ".jpg')";
   } else {
     var headImage = "url('/images/headers/pages/" + title + ".jpg')";
