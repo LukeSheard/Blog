@@ -47,7 +47,6 @@ $(document).ready(function(){
   } else {
     path = pathname.split( '/' );
   }
-  console.log(path[2])
 
   $("#navbar").children('li').each(function () {
     var navItem =$(this)
@@ -58,13 +57,13 @@ $(document).ready(function(){
         navItem.children('a').addClass("activeItem");
       }
     })
+  });
 
-    $('a').each(function(){
-      var href = $(this).attr('href');
-      href = href.toLowerCase()
-      $(this).attr('href', href);
-      
-    });
+  $('a').each(function(){
+    var href = $(this).attr('href');
+    href = href.toLowerCase()
+    $(this).attr('href', href);
+    
   });
 
   if(path[1] === "blog" && path[2] != ""){
