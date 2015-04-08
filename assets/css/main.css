@@ -195,6 +195,13 @@ footer a:hover, a:focus{
 	margin-bottom:5px;
 }
 
+.full-width > img{
+	width: 100%;
+	margin-right:1%;
+	margin-left:1%;
+	margin-bottom:5px;
+}
+
 .cover > img{
 	max-height: 100%;
 	max-width: 100%;
