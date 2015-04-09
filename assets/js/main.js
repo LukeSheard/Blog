@@ -41,30 +41,33 @@ $(document).ready(function(){
   var title = document.getElementById("PageTitle").innerHTML;
   var pathname = window.location.pathname;
   path = pathname.toLowerCase();
-  console.log(path)
   
   if( path == "/"){
     path = "home";
   } else {
     path = pathname.split( '/' );
+    path = path[1]
   }
+
+  console.log(path)
 
   $("#navbar").children('li').each(function () {
     var navItem =$(this)
     navItem.children("a").each(function(){
       var $item = $(this);
       var id = $item.attr('id').toLowerCase();
-      if(id == path[1]){
+      console.log(id)
+      if(id == path){
         navItem.children('a').addClass("activeItem");
       }
     })
-  });
 
-  $('a').each(function(){
-    var href = $(this).attr('href');
-    href = href.toLowerCase()
-    $(this).attr('href', href);
-    
+    $('a').each(function(){
+      var href = $(this).attr('href');
+      href = href.toLowerCase()
+      $(this).attr('href', href);
+      
+    });
   });
 
   if(path[1] === "blog" && path[2] != ""){

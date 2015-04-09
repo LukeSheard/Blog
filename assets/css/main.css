@@ -131,8 +131,8 @@ footer a:hover, a:focus{
 
 .back-to-top {
     position: fixed;
-    bottom: 2em;
-    right: 30px;
+    bottom: 3em;
+    right: 3em;
     text-decoration: none;
     color: #000000;
     background-color: rgba(235, 235, 235, 0.80);
