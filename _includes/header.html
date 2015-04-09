@@ -1,12 +1,17 @@
 <!DOCTYPE html5>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
    	<title>Luke Sheard | {{ page.title }}</title>
+    
+	<!-- Meta Tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ site.description }}">
+    <meta property="og:title" content="Luke Sheard | {{page.title}}" />
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="http://www.lukesheard.com{{page.url}}" />
+	<meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
 	
-	<!-- STYLING -->
+	<!-- Styling -->
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link href="/assets/css/bootstrap.css" rel="stylesheet">
@@ -39,14 +44,14 @@
 			    <div class="navbar-header">
 			    	<a class="navbar-brand" href="/">Luke Sheard</a>
 
-			      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 				        <span class="sr-only">Toggle navigation</span>
 				        <span class="glyphicon glyphicon-menu-hamburger"></span>
 			      	</button>			      
 			    </div>
 
 				<!-- NavBar Links -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<div class="collapse navbar-collapse" id="navbar">
 				  	<ul class="nav navbar-nav navbar-right" id="navbar">
 						{% for link in site.navigation %}
 							{% if {{link.type}} == "link" %}

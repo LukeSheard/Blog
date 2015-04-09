@@ -23,13 +23,13 @@ layout: home
 								{{job.location}}</small>
 							<small class="date">{{job.range}}</small>
 							<h5 class="panel-title">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href='#collapse{{job.item}}' aria-expanded="false" aria-controls='collapse{{job.item}}'>
+								<a data-toggle="collapse" href='#collapse{{job.item}}' aria-controls='collapse{{job.item}}'>
 										{{job.position}}
 								</a>
 							</h5>
 							<small><a href="http://{{job.link}}" target="_blank" />{{job.link}}</a></small>
 					</div>
-					<div id='collapse{{job.item}}' class="panel-collapse collapse" role="tabpanel" aria-labelledby='heading{{jobe.item}}'>
+					<div id='collapse{{job.item}}' class="panel-collapse collapse">
 						<div class="panel-body">
 							 {{ job.content }}
 						</div>
@@ -53,13 +53,13 @@ layout: home
 							<small class="date">{{job.range}}</small>
 							<small class="date">{{job.date}}</small>
 							<h5 class="panel-title">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href='#collapse{{job.item}}' aria-expanded="false" aria-controls='collapse{{job.item}}'>
+								<a data-toggle="collapse" href='#collapse{{job.item}}' aria-controls='collapse{{job.item}}'>
 										{{job.position}}
 								</a>
 							</h5>
 							<small><a href="http://{{job.link}}" target="_blank" />{{job.link}}</a></small>
 					</div>
-					<div id='collapse{{job.item}}' class="panel-collapse collapse" role="tabpanel" aria-labelledby='heading{{jobe.item}}'>
+					<div id='collapse{{job.item}}' class="panel-collapse collapse">
 						<div class="panel-body">
 							 {{ job.content }}
 						</div>
@@ -86,13 +86,13 @@ layout: home
 							<small class="date">{{job.range}}</small>
 							<small class="date">{{job.date}}</small>
 							<h5 class="panel-title">
-								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href='#collapse{{job.item}}' aria-expanded="false" aria-controls='collapse{{job.item}}'>
+								<a data-toggle="collapse" href='#collapse{{job.item}}' aria-controls='collapse{{job.item}}'>
 										{{job.position}}
 								</a>
 							</h5>
 							<small><a href="http://{{job.link}}" target="_blank" />{{job.link}}</a></small>
 					</div>
-					<div id='collapse{{job.item}}' class="panel-collapse collapse" role="tabpanel" aria-labelledby='heading{{jobe.item}}'>
+					<div id='collapse{{job.item}}' class="panel-collapse collapse">
 						<div class="panel-body">
 							 {{ job.content }}
 						</div>
@@ -103,12 +103,15 @@ layout: home
 		</div>
 
 		<h3 class="heading">Skill Set</h3>
-		<ul class="skills">
+		<ul class="skills bubbles">
 			<li><code>HTML5</code></li>
 			<li>Product Management</li>
 			<li><code>CSS3</code></li>
 			<li>UI Design</li>
-			<li>Adobe Creative Cloud</li>
+			<li>Adobe Photoshop</li>
+			<li>Adobe Illustrator</li>
+			<li>Adobe Lightroom</li>
+			<li>Adobe Premiere</li>
 			<li><code>Java</code></li>
 			<li><code>Python</code></li>
 			<li><code>Git</code></li>
@@ -119,8 +122,9 @@ layout: home
 		</ul>
 
 		<h3 class="heading">Additional</h3>
-		<ul>
-			<li><p>First Lego League World Finalist. </p></li>
+		<ul class="skills lines">
+			<li><p>First Lego League World Finalist.</p></li>
+			<li><p>High School ambassador to Chongqing, China. </p></li>
 		</ul>
 	</div>
 </div>

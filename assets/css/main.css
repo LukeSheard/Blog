@@ -449,14 +449,14 @@ ul.showlist li p{
 }
 
 /* RESUME STUFF */
-ul.skills{
+.bubbles{
 	display: block;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-ul.skills li{
+.bubbles li{
 	font-weight: 400;
   	font-size: 1.1em;
 	display: inline-block;
@@ -466,6 +466,22 @@ ul.skills li{
 	border: 1.5px solid #0000ff;
 }
 
-ul.skills li > code{
+.bubbles li > code{
 	background: transparent;
+}
+
+.bubbles{
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.lines{
+	margin-top: 10px;
+	line-height: 1.1em;
+}
+
+.lines li{
+	pading: 0;
+	margin: 0;
 }

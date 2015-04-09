@@ -41,6 +41,7 @@ $(document).ready(function(){
   var title = document.getElementById("PageTitle").innerHTML;
   var pathname = window.location.pathname;
   path = pathname.toLowerCase();
+  console.log(path)
   
   if( path == "/"){
     path = "home";
@@ -67,11 +68,18 @@ $(document).ready(function(){
   });
 
   if(path[1] === "blog" && path[2] != ""){
-    var headImage = "url('/images/headers/posts/" + title + ".jpg')";
+    var headImage = "http://www.lukesheard.com/images/headers/posts/" + title + ".jpg"
+    var headImageLink = "url('/images/headers/posts/" + title + ".jpg')";
   } else {
-    var headImage = "url('/images/headers/pages/" + title + ".jpg')";
+    var headImage = "http://www.lukesheard.com/images/headers/pages/" + title + ".jpg"
+    var headImageLink = "url('/images/headers/pages/" + title + ".jpg')";
   }
-  $("header").css("background-image", headImage);
+  $("header").css("background-image", headImageLink);
+  
+  $("meta[property='og\\:image']").attr("content", headImage)
+  var ogpath = window.location.pathname.toLowerCase()
+  var ogurl = "http://www.lukesheard.com" + ogpath
+  $("meta[property='og\\:url']").attr("content", ogurl)
 
   if(title === "Blog"){
     $("#header").css("padding-bottom", 0);
@@ -84,15 +92,18 @@ $(document).ready(function(){
   
   if (title === "Resume") {
     var $ul = $('.skills')
-          var $liArr = $ul.children('li');
-          
-          $liArr.sort(function(a,b){
-          var temp = parseInt( Math.random()*10 );
-          var isOddOrEven = temp%2;
-          var isPosOrNeg = temp>5 ? 1 : -1;
-          return( isOddOrEven*isPosOrNeg );
-          })
-          .appendTo($ul);
+
+    $.each($ul, function(){
+      var $liArr = $(this).children('li');
+    
+      $liArr.sort(function(a,b){
+      var temp = parseInt( Math.random()*10 );
+      var isOddOrEven = temp%2;
+      var isPosOrNeg = temp>5 ? 1 : -1;
+      return( isOddOrEven*isPosOrNeg );
+      })
+    .appendTo($(this));
+    })
   } 
 });
 
