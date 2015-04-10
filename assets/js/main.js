@@ -26,38 +26,28 @@ var _gaq = _gaq || [];
       s.parentNode.insertBefore(ga, s);
   	})();
 
-function people(like){
-    if(like === 0){
-      return "Please consider liking this!"
-    } else if(like === 1){
-      return "Thankyou for liking this!";
-      // return like + " person likes this!"
-    } else{
-      return like + " people like this!";
-    }
-  };
-
 $(document).ready(function(){
+  $('#mycarousel').carousel();
+
   var title = document.getElementById("PageTitle").innerHTML;
   var pathname = window.location.pathname;
   path = pathname.toLowerCase();
   
-  if( path == "/"){
-    path = "home";
+
+  if(path == "/"){
+    path = "home"
+    navIndex = path;
   } else {
     path = pathname.split( '/' );
-    path = path[1]
+    navIndex = path[1]
   }
-
-  console.log(path)
 
   $("#navbar").children('li').each(function () {
     var navItem =$(this)
     navItem.children("a").each(function(){
       var $item = $(this);
       var id = $item.attr('id').toLowerCase();
-      console.log(id)
-      if(id == path){
+      if(id == navIndex){
         navItem.children('a').addClass("activeItem");
       }
     })
@@ -70,9 +60,33 @@ $(document).ready(function(){
     });
   });
 
+  $(".post").each(function(){
+    var post = $(this);
+    var posth3 = $(this).children(".post-title").children("h3");
+    var postTitle = posth3.text();
+    var postURL = "url('/images/headers/posts/" + postTitle + ".jpg')";
+    post.css("background-image", postURL)
+    post.css("background-repeat", "no-repeat")
+  });
+
+  $(".work").each(function(){
+    var post = $(this);
+    var posth3 = $(this).children(".work-title").children("h3");
+    var postTitle = posth3.text();
+    var postURL = "url('/images/portfolio/squares/" + postTitle + ".jpg')";
+    var width = post.width() / 2.0
+
+    post.css("height", width + "px")
+    post.css("background-image", postURL)
+    post.css("background-repeat", "no-repeat")
+  });
+
   if(path[1] === "blog" && path[2] != ""){
     var headImage = "http://www.lukesheard.com/images/headers/posts/" + title + ".jpg"
     var headImageLink = "url('/images/headers/posts/" + title + ".jpg')";
+  } else if(path[1] === "portfolio"){
+    var headImage = "http://www.lukesheard.com/images/portfolio/squares/" + title + ".jpg"
+    var headImageLink = "url('/images/portfolio/squares/" + title + ".jpg')";
   } else {
     var headImage = "http://www.lukesheard.com/images/headers/pages/" + title + ".jpg"
     var headImageLink = "url('/images/headers/pages/" + title + ".jpg')";

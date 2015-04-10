@@ -5,9 +5,9 @@ url: "http://www.lukesheard.com"
 
 collections:
  jobs:
- shows:
+ portfolio:
    output: true
-   permalink: "/shows/:title/"
+   permalink: "/portfolio/:title/"
 
 
 paginate: 12
@@ -29,6 +29,6 @@ navigation:
   type: dropdown
   pages: [America]
   url: /blog/
-# - text: Shows
-#   type: link
-#   url: /shows/
+- text: Portfolio
+  type: link
+  url: /portfolio/
