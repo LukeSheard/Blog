@@ -12,7 +12,7 @@ layout: home
 <div class="row">
 	<div class="col-xs-12 col-md-8">
 		<h3 class="heading">Work Experience</h3>
-		<div class="panel-group" id="accordionWork" role="tablist" aria-multiselectable="true">
+		<div class="panel-group" id="accordionWork" role="tablist" aria-multiselectable="false">
 			{% for job in site.jobs %}
 				{% if {{job.type}} == "work" %}
 					<div class="panel panel-default">
@@ -41,7 +41,7 @@ layout: home
 		</div>
 
 		<h3 class="heading">Voluntary</h3>
-		<div class="panel-group" id="accordionVolunteering" role="tablist" aria-multiselectable="true">
+		<div class="panel-group" id="accordionVolunteering" role="tablist" aria-multiselectable="false">
 			{% for job in site.jobs %}
 				{% if {{job.type}} == "volunteer" %}
 					<div class="panel panel-default">
