@@ -210,10 +210,49 @@ footer a:hover, a:focus{
 
 #content > img {
 	max-height: 450px;
-	max-width: 350px;
+	max-width: 48%;
 	margin-right:1%;
 	margin-left:1%;
-	margin-bottom:5px;
+	padding-bottom:5px;
+}
+
+.no-image{
+	float: none;
+}
+
+.center-image{
+	margin: 0 auto; !important
+	max-width: 100%; !important
+}
+
+.left-image{
+	float: left;
+}
+
+.right-image{
+	float: right;
+}
+
+@media (max-width: 992px){
+	#content > img {
+		max-height: 450px;
+		max-width: 98%;
+		margin-right:1%;
+		margin-left:1%;
+		padding-bottom:15px;
+	}
+
+	.no-image{
+		float: none;
+	}
+
+	.left-image{
+		float: none;
+	}
+
+	.right-image{
+		float: none;
+	}
 }
 
 .full-width > img{
