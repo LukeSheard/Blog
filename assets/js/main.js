@@ -124,25 +124,6 @@ $(document).ready(function(){
   } 
 });
 
-$(window).load(function(){
-
-  var now = new Date();
-  now = now.getTime();
-
-  if(Date.parse(localStorage.date) !== null){
-    var date = Date.parse(localStorage.date);
-    var difference = now - date;
-    difference = difference / 86400000;
-      if(difference > 1){
-      $('#myModal').modal('show');
-    }
-  } else {
-    $('#myModal').modal('show');
-  }
-  
-  localStorage.date = new Date();
-});
-
 var offset = 400;
 var duration = 500;
 $(window).scroll(function() {
@@ -152,8 +133,9 @@ $(window).scroll(function() {
         $('.back-to-top').fadeOut(duration);
     }
 });
+
 $('.back-to-top').click(function(event) {
     event.preventDefault();
     $('html, body').animate({scrollTop: 0}, 2* duration);
     return false;
-})
+});

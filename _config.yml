@@ -29,6 +29,6 @@ navigation:
   type: dropdown
   pages: [America]
   url: /blog/
-- text: Portfolio
-  type: link
-  url: /portfolio/
+# - text: Portfolio
+#   type: link
+#   url: /portfolio/
