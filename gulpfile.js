@@ -2,8 +2,6 @@ const css        = require('gulp-clean-css')
 const gulp       = require('gulp');
 const sass       = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const ghpages    = require('gh-pages');
-const path       = require('path');
 
 gulp.task('default', [ 'build', 'watch' ]);
 gulp.task('build', [ 'sass', 'assets' ]);
@@ -26,10 +24,4 @@ gulp.task('sass', function() {
     }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./public'));
-});
-
-gulp.task('deploy', function() {
-  return ghpages.publish(path.join(__dirname, 'public'), {
-    branch: 'master'
-  });
 });
