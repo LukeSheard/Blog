@@ -18,7 +18,7 @@ gulp.task('assets', function() {
 gulp.task('sass', function() {
   return gulp.src('./src/style/index.scss')
     .pipe(srcm.init())
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass())
     .pipe(css({
       compatibility: 'ie8'
     }))
