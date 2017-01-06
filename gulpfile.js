@@ -23,5 +23,5 @@ gulp.task('sass', function() {
       compatibility: 'ie8'
     }))
     .pipe(srcm.write())
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest('./public'));
 });
