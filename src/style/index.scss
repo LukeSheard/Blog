@@ -1,5 +1,76 @@
 @import '../../node_modules/normalize.css/normalize';
 
+$light-grey: #fffafa;
+$dark-grey: #2f4f4f;
+$white: #fff;
+
+$break: 650px;
+
+html {
+  font-family: 'Source Sans Pro', 'San Francisco', 'Arial', sans-serif;
+  font-size: 16px;
+}
+
 body {
-  background: red;
+  background: $light-grey;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
+  margin: 15px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  background: $dark-grey;
+  color: $white;
+  min-height: 50px;
+  padding: 10px;
+  text-align: center;
+}
+
+header,
+main {
+  padding: 0 10px;
+}
+
+@media screen and (min-width: $break) {
+  footer
+  header,
+  main {
+    margin: 0 auto;
+    max-width: 75%;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+.header__nav {
+  display: block;
+
+  @media screen and (min-width: $break) {
+    float: right;
+    margin: 37.44px 0 5px 0;
+  }
+}
+
+.header__title {
+  margin-bottom: 5px;
+}
+
+.header__nav--link {
+  display: inline-block;
+  list-style: none;
+  padding-right: 10px;
 }
